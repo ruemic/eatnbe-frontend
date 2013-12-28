@@ -19,43 +19,50 @@
     <header class="site-header">
       <div class="row">
         <div class="large-12 columns">
-          <img src="img/logo.png" alt="eatnbe" class="logo">
+          <a href="/">
+            <img src="img/logo.png" alt="eatnbe" class="logo">
+          </a>
         </div>
       </div>
     </header>
 
     <section id="hero">
+      <div id="host-bg"></div>
 
       <div class="row">
 
-        <div class="large-8 large-push-2 medium-10 medium-push-1 columns">
-          <h1>Find a place to eat</h1>
-          <h3>Discover the culture of homecooked food.</h3>
-
-          <form class='search' action="results.html">
-
-            <div class="row">
-              <div class="large-8 medium-8 columns">
-
-                <div class="row collapse">
-                  <div class="large-8 medium-8 columns">
-                    <input class="expand" type="text"/>
-                  </div>
-                  <div class="large-4 medium-4 columns">
-                    <button class="expand">Search</button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </form>
-
+        <div class="large-12 columns">
+          <section class="guest-headings">
+            <h1 class="text-center">Discover the culture of food</h1>
+            <h3 class="text-center hide-for-small">Stay tuned for something really exciting</h3>
+          </section>
+          <section class="host-headings">
+            <h1 class="text-center">Host amazing dinners</h1>
+            <h3 class="text-center hide-for-small">Stay tuned for something really exciting</h3>
+          </section>
         </div>
 
       </div>
     </section>
 
+    <section id="sign-up-bar">
+      <div class="row">
+
+        <div class="large-3 medium-3 columns">
+          <input type="email" class="form-input" placeholder="Email">
+        </div>
+        <div class="large-3 medium-3 columns">
+          <input type="text" class="form-input" placeholder="Location">
+        </div>
+        <div class="large-2 medium-3 columns">
+          <label id="host-label" for="like-to-host"><input id="like-to-host" type="checkbox"><span>I'd like to host</span></label>
+        </div>
+        <div class="large-4 medium-3 columns">
+          <button class="expand">Request <span class="hide-for-medium">Early</span> Access</button>
+        </div>
+
+      </div>
+    </section>
 
     <section>
       <div class="row">
