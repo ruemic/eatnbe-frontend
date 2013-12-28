@@ -1,0 +1,53 @@
+@media only screen and (max-width: 40em) {
+
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+
+
+@media only screen and (min-width: 40.063em) {
+
+  #hero h1 {
+    margin: 7em auto 1em;
+    font-size: 2.5em;
+    width: 13em;
+  }
+  #hero h1:after {
+    top: .45em;
+    left: 33%;
+    width: 33.3%;
+    height: 2px;
+    display: block;
+    background: rgba(255, 255, 255, 0.71);
+    content: " ";
+    position: relative;
+  }
+
+  #hero h3 {
+    display: block !important;
+    margin: 0 auto 2em;
+    width: 20em;
+  }
+  #sign-up {
+    margin: 12em 0 2em;
+  }
+
+} /* min-width 641px, medium screens */
+
+
+
+@media only screen and (min-width: 64.063em) {
+  #hero h1 {
+    font-size: 2.8em;
+  }
+  #hero h3 {
+    font-size: 1.6em;
+  }
+
+} /* min-width 1025px, large screens */
+
+
+
+@media only screen and (min-width: 90.063em) {
+
+} /* min-width 1441px, xlarge screens */
+
