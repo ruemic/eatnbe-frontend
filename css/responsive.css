@@ -28,6 +28,9 @@
     bottom: auto;
   }
 
+  #map {
+    height: 30em;
+  }
 
 } /* min-width 641px, medium screens */
 
