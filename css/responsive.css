@@ -44,6 +44,10 @@
     font-size: 1.6em;
   }
 
+  .checkout-confirmation .confirm-reservation {
+    margin-top: 0em;
+  }
+
 } /* min-width 1025px, large screens */
 
 
