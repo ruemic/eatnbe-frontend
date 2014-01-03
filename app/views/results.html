@@ -1,0 +1,71 @@
+<div class="row">
+
+  <div class="large-12 columns">
+    <h1>Search results:</h1>
+  </div>
+
+
+  <div class="large-6 medium-6 columns">
+
+    <section id="results">
+
+      <div class="row">
+        <div class="large-12 columns">
+
+          <article class="result" ng-repeat="resource in events">
+            <div class="row">
+              <div class="large-4 medium-4 columns">
+                <a href="event-public.html">
+                  <img src="http://placehold.it/500x312" class="expand" alt="">
+                </a>
+                <p class="host"><small>Hosted by: <a href="#"><strong>{{resource.event.hostDetails.hostName}}</strong></a></small></p>
+                <p class="seats"><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
+                <span class="price">{{resource.event.eventDetails.eventPrice}}</span>
+              </div>
+              <div class="large-8 medium-8 columns">
+                <a href="event-public.html">
+                <h3>{{resource.event.eventDetails.name}}</h3>
+
+                </a>
+                <p class="description">{{resource.event.eventDetails.eventDescription | limitTo: 120}}</p>
+              </div>
+            </div>
+          </article>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="large-6 medium-6 columns">
+
+    <section class="map-container">
+
+      <div class="search-bar hide-for-small">
+        <form class='search' action="results.html">
+
+          <div class="row collapse">
+            <div class="large-8 medium-8 columns">
+              <input class="expand" type="text"/>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <button class="expand">New Search</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <h3>Map of nearby events:</h3>
+      <div id="map_canvas"></div>
+      <p class="right"><i class="fa fa-user key"></i><small> = Your Current Location</i></small></p>
+
+
+    </section>
+
+  </div>
+
+</div>
