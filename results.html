@@ -19,7 +19,7 @@
   <header class="site-header">
     <div class="row">
       <div class="large-3 medium-4 columns">
-        <img src="img/logo.png" alt="eatnbe" class="logo">
+        <a href="index.html"><a href="index.html"><img src="img/logo.png" alt="eatnbe" class="logo"></a></a>
       </div>
 
       <div class="large-6 medium-6 columns">
@@ -55,7 +55,7 @@
                     <img src="http://placehold.it/500x312" class="expand" alt="">
                   </a>
                   <p class="host"><small>Hosted by: <a href="#"><strong>Gokulramanan G</strong></a></small></p>
-                  <p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
+                  <p class="seats"><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
                   <span class="price">$20</span>
                 </div>
                 <div class="large-8 medium-8 columns">
@@ -75,7 +75,7 @@
                     <img src="http://placehold.it/500x312" class="expand" alt="">
                   </a>
                   <p class="host"><small>Hosted by: <a href="#"><strong>Gokulramanan G</strong></a></small></p>
-                  <p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
+                  <p class="seats"><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
                   <span class="price">$20</span>
                 </div>
                 <div class="large-8 medium-8 columns">
@@ -95,7 +95,7 @@
                     <img src="http://placehold.it/500x312" class="expand" alt="">
                   </a>
                   <p class="host"><small>Hosted by: <a href="#"><strong>Gokulramanan G</strong></a></small></p>
-                  <p><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
+                  <p class="seats"><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
                   <span class="price">$20</span>
                 </div>
                 <div class="large-8 medium-8 columns">
@@ -198,34 +198,41 @@
 
       $(document).foundation();
 
-      function getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showMap);
-        } else {
-          console.log("no support");
-          map.text("Geolocation is not supported by this browser.");
-        }
-      };
+      // function getLocation() {
+      //   if (navigator.geolocation) {
+      //     navigator.geolocation.getCurrentPosition(showMap);
+      //   } else {
+      //     console.log("no support");
+      //     map.text("Geolocation is not supported by this browser.");
+      //   }
+      // };
 
-      getLocation();
+      // getLocation();
 
-      function showMap(position) {
+      // function showMap(position) {
+
+      $(function() {
+  // Handler for .ready() called.
+
+
+
+
 
         map = new GMaps({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lat: 36.9575335,
+          lng: -122.0400129,
           div: '#map_canvas'
         });
 
         map.drawOverlay({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lat: 36.9575335,
+          lng: -122.0400129,
           content: '<div class="current-location"><i class="fa fa-user"></i></div>'
         });
 
         map.addMarker({
-          lat: position.coords.latitude + .003,
-          lng: position.coords.longitude + .006,
+          lat: 36.9575335 + .003,
+          lng: -122.0400129 + .006,
           title: 'Fried Chilly Squid',
           details: { price: 22 },
           infoWindow: {
@@ -233,15 +240,17 @@
           }
         });
         map.addMarker({
-          lat: position.coords.latitude - .001,
-          lng: position.coords.longitude - .006,
+          lat: 36.9575335 - .001,
+          lng: -122.0400129 - .006,
           title: 'Fried Chilly Squid',
           details: { price: 22 },
           infoWindow: {
           content: '<div class="map-tip"><h4 class="text-center">Fried Chilly Squid</h4><img class="text-center" src="http://placehold.it/500x312" class="expand" alt=""></div>'
           }
         });
-      }
+
+      // }
+  });
 
     </script>
   </body>
