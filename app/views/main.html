@@ -34,14 +34,9 @@
 
     <section>
       <div class="row">
-        <div class="large-12 columns">
+        <div class="large-12 columns" id="how-it-works">
 
-          <input type="checkbox" class="check" id="chkbx" name="toggle" checked/>
-          <label id="toggle-button" for="chkbx">
-            <div id="thumb"></div>
-            <span class="for-guests">For Guests</span>
-            <span class="for-hosts">For Hosts</span>
-          </label>
+          <h1 class="text-center">How it Works</h1>
 
           <ul class="inline-list facebook">
             <li>
@@ -53,7 +48,12 @@
             </li>
           </ul>
 
-          <h1 class="text-center">How it Works</h1>
+          <div id="toggle-button" ng-click="toggleHostView()">
+            <div id="thumb"></div>
+            <span class="for-guests">For Guests</span>
+            <span class="for-hosts">For Hosts</span>
+          </div>
+
 
           <div class="row features">
 

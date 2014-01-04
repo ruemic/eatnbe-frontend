@@ -33,7 +33,10 @@ h1,h2,h3 {
   font-size: 1em;
 }
 
-
+.site-header + .container {
+  min-height: 32em;
+  display: block;
+}
 
 /* HERO
  * -------------------------- */
@@ -63,6 +66,8 @@ h1,h2,h3 {
   -o-background-size: cover;
   background-size: cover;
   background-size: 100% 100%;
+  display: inline-block;
+  width: auto;
 }
 
 #hero h3 {
@@ -313,90 +318,36 @@ h1,h2,h3 {
 }
 
 
-
-
 /* TOGGLE BUTTON
  * -------------------------- */
 
-
-#chkbx { display: none; }
-#chkbx + label {
-  display: block;
+#toggle-button {
   position: relative;
   width: 100px;
   height: 50px;
-  border-radius: 5px;
   margin: 2em auto;
-  display: block !important;
+  display: block;
 }
 
-#chkbx:checked ~ label[for=chkbx]:before {
-  content:"";
-}
 #thumb {
   content: '';
   width: 102px;
   height: 52px;
   display: block;
-  top: -5px;
+  top: -4px;
   float: left;
   border-radius: 5px;
   padding: 0px;
-  margin: 0px 0px 0px 50px;
-  /*background: rgba(232, 243, 255, 0.23);*/
+  margin: 0 0 0 -50px;
   position: absolute;
   z-index: 100;
   cursor: pointer;
   box-shadow:0 3px 12px -3px rgba(0, 0, 0, 0.3);
-  transition: background 0.5s;
-  border:6px solid #FF9E9E;
+  transition: margin 0.3s;
+  border: 6px solid #FF9E9E;
 }
 
-#toggle-button:hover #thumb {
-}
-#thumb div {
-  width: 70%;
-  height: 5px;
-  background: rgba(0,0,0,0.1);
-  margin: 23px auto;
-  position:relative;
-}
-
-#thumb div:after {
-  content:"";
-  width: 100%;
-  height: 5px;
-  background: rgba(0,0,0,0.1);
-  position:absolute;
-  top: 10px;
-  left:0;
-}
-
-#thumb div:before {
-  content:"";
-  width: 100%;
-  height: 5px;
-  background: rgba(0,0,0,0.1);
-  position:absolute;
-  top: -10px;
-  left:0;
-}
-
-#chkbx:checked ~ label[for=chkbx] #thumb {
-  margin: 0 0 0 -50px;
-}
-label:before,#thumb,#chkbx:checked ~ label[for=chkbx]:before {
-  transition: all .2s;
-}
-
-#chkbx:checked ~ label .for-hosts {
-  background: #FAF2EC;
-}
-#chkbx:checked ~ label .for-guests {
-  background-color: white;
-}
-
-#toggle-button > span {
+.for-hosts, .for-guests {
   width:100px;
   height:45px;
   line-height:45px;
@@ -405,29 +356,45 @@ label:before,#thumb,#chkbx:checked ~ label[for=chkbx]:before {
   text-align:center;
   box-shadow:1px -1px 5px rgba(0, 0, 0, 0.1) inset;
   border-top:1px solid rgba(25, 77, 96, 0.23);
-
-  transition: 1s all;
+  transition: .4s all;
   font-weight: bold;
-}
-#toggle-button ::selection {
-  background: transparent;
+  font-size: .88em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .for-hosts {
+  background-color: #FAF2EC;
   border-radius: 0 5px 5px 0;
   margin-left:50%;
   border-right:1px solid rgba(255,255,255,1);
   border-bottom:1px solid rgba(255,255,255,1);
 }
 .for-guests {
+  background-color: white;
   border-radius:5px 0 0 5px;
   overflow:hidden;
-  background-color: #FAF2EC;
   border-left:1px solid rgba(255, 255, 255, 1);
   border-bottom:1px solid rgba(255,255,255,0.8);
   left:-45px;
 }
 
+/* Button state */
+
+
+.hosting #thumb {
+  margin: 0px 0px 0px 50px;
+}
+.hosting .for-guests {
+  background-color: #FAF2EC;
+}
+.hosting .for-hosts {
+  background: white;
+}
 
 
 /* FEATURES
@@ -446,7 +413,9 @@ label:before,#thumb,#chkbx:checked ~ label[for=chkbx]:before {
   text-align: center;
 }
 
-
+.how-it-works h1 {
+   margin-top: 1em;
+}
 .hosting #host-bg {
    opacity: 1;
 }
