@@ -43,7 +43,7 @@
 
         <div class="large-6 medium-6 columns">
           <ul class="inline-list right main-nav">
-            <li><a href="dashboard.html">Hi, Ben!</a></li>
+            <li><a href="#dashboard">Hi, Ben!</a></li>
             <li><a href="host.html" class="tiny button">Host</a></li>
             <li><a href="logout.html">Logout</a></li>
           </ul>
@@ -51,23 +51,23 @@
       </div>
     </header>
 
+    <div class="container" ui-view="">
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    </div>
 
     <footer class="site-footer">
       <div class="row">
         <div class="large-4 medium-4 columns">
           <h4>Company</h4>
           <ul class="no-bullet">
-            <li><a href="/about">About us</a></li>
+            <li><a href="about.html">About us</a></li>
           </ul>
         </div>
         <div class="large-4 medium-4 columns">
           <h4>Legal</h4>
           <ul class="no-bullet">
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/privacy">Terms of Use</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Use</a></li>
           </ul>
         </div>
         <div class="large-4 medium-4 columns">
@@ -118,6 +118,8 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -139,6 +141,8 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/eventService.js"></script>
     <script src="scripts/controllers/results.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/directives/activeTab.js"></script>
     <!-- endbuild -->
 
 

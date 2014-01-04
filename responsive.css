@@ -7,8 +7,9 @@
 @media only screen and (min-width: 40.063em) {
 
   #hero h1 {
-    margin: 7em 0 0 0;
+    margin: 12em 0 0 0;
     font-size: 2.8em;
+    width: 13em;
   }
 
   #hero h3 {
@@ -19,6 +20,14 @@
   #sign-up {
     margin: 12em 0 2em;
   }
+
+  .result .price {
+    top:.4em;
+    right: 1.4em;
+    left: auto;
+    bottom: auto;
+  }
+
   #map {
     height: 30em;
   }

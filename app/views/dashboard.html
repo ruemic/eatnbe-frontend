@@ -1,0 +1,38 @@
+<section class="account-dashboard">
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h2>Dashboard</h2>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+
+        <div class="row">
+
+          <div class="large-2 medium-3 columns">
+            <ul class="small-block-grid-2 medium-block-grid-1 no-bullet dashboard-menu">
+              <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard"><i class="fa fa-dashboard"></i>Overview</a></li>
+              <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.profile"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.events"><i class="fa fa-cutlery"></i> Events</a></li>
+              <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.inbox"><i class="fa fa-envelope"></i> Inbox</a></li>
+              <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.billing"><i class="fa fa-credit-card"></i>Billing</a></li>
+            </ul>
+          </div>
+
+
+          <div class="large-10 medium-9 columns" ui-view="">
+            <h1>Hi, Ben!</h1>
+            <h3>You have no recent activity</h3>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

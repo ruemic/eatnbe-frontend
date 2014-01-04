@@ -162,9 +162,17 @@ h1,h2,h3 {
   white-space: nowrap;
 }
 .result .seats {
-  margin-bottom: 2em !important;
+  margin-bottom: 0;
+  padding: 0 3px;
+  background: rgba(208, 231, 225, 0.18);
+  border-radius: 0 0 4px 4px;
 }
-
+.result .pic-wrapper {
+  position: relative;
+}
+.result .date {
+  position: absolute;
+}
 .result .price {
   position: absolute;
   border: 1px solid #FFBE81;
@@ -176,8 +184,8 @@ h1,h2,h3 {
   text-align: center;
   border-radius: 100%;
   font-family: 'Signika Negative', sans-serif;
-  top: -.4em;
-  left: .5em;
+  top:-0.2em;
+  right: -0.2em;
 }
 
 
@@ -327,6 +335,7 @@ h1,h2,h3 {
   height: 50px;
   margin: 2em auto;
   display: block;
+  cursor: pointer;
 }
 
 #thumb {
@@ -359,12 +368,6 @@ h1,h2,h3 {
   transition: .4s all;
   font-weight: bold;
   font-size: .88em;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .for-hosts {
@@ -400,6 +403,14 @@ h1,h2,h3 {
 /* FEATURES
  * -------------------------- */
 
+#how-it-works * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .feature {
   margin: 0 auto 3em;
   max-width: 22em;

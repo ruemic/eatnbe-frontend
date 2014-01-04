@@ -1,46 +1,51 @@
 <div class="row">
 
   <div class="large-12 columns">
-    <h1>Search results:</h1>
+    <h2><small>Search results for:</small>"Dinner in Santa Cruz"</h2>
   </div>
 
 
-  <div class="large-6 medium-6 columns">
+  <div class="large-7 medium-7 columns">
 
     <section id="results">
 
       <div class="row">
         <div class="large-12 columns">
 
-          <article class="result" ng-repeat="resource in events">
-            <div class="row">
-              <div class="large-4 medium-4 columns">
-                <a href="event-public.html">
-                  <img src="http://placehold.it/500x312" class="expand" alt="">
+          <ul class="small-block-grid-2 large-block-grid-3">
+
+            <li ng-repeat="resource in events" >
+
+              <article class="result" >
+                <a href="event-public.html" class="event-link">
+                  <h3>{{resource.event.eventDetails.name}}</h3>
+                  <div class="pic-wrapper">
+                    <h3 class="date"><small>{{resource.event.eventDetails.eventDate}}</small></h3>
+                    <span class="price">{{resource.event.eventDetails.eventPrice}}</span>
+                    <img src="http://placehold.it/500x312" class="expand" alt="">
+                  </div>
                 </a>
-                <p class="host"><small>Hosted by: <a href="#"><strong>{{resource.event.hostDetails.hostName}}</strong></a></small></p>
                 <p class="seats"><i class="fa fa-user"></i><i class="fa fa-user"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i><i class="fa fa-user vacant"></i></p>
-                <span class="price">{{resource.event.eventDetails.eventPrice}}</span>
-              </div>
-              <div class="large-8 medium-8 columns">
-                <a href="event-public.html">
-                <h3>{{resource.event.eventDetails.name}}</h3>
-
-                </a>
+                <p class="host">
+                  <small>Hosted by: <a href="#"><strong>{{resource.event.hostDetails.hostName}}</strong> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></a></small>
+                </p>
                 <p class="description">{{resource.event.eventDetails.eventDescription | limitTo: 120}}</p>
-              </div>
-            </div>
-          </article>
-
+              </article>
+            </li>
+          </ul>
 
         </div>
+
+        <div ui-view></div>
+        <a class="button" ui-sref="results.more">See More Events</a>
+
       </div>
 
     </section>
 
   </div>
 
-  <div class="large-6 medium-6 columns">
+  <div class="large-5 medium-5 columns">
 
     <section class="map-container">
 
