@@ -7,9 +7,13 @@
 
   <div class="large-7 medium-7 columns">
 
+    <section class="panel">
+      <h4>Refine your results: <input ng-model="search.$"></h4>
+    </section>
+
     <section id="results">
 
-      <article class="row result" ng-repeat="resource in events">
+      <article class="row result" ng-repeat="resource in events | filter:search ">
         <div class="large-12 columns">
           <div class="pic-wrapper small-5 medium-4 large-5">
             <a href="event-public.html" class="event-link">
