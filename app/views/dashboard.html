@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="large-12 columns">
-      <h2>Dashboard</h2>
+
     </div>
   </div>
 
@@ -24,8 +24,49 @@
 
 
           <div class="large-10 medium-9 columns" ui-view="">
-            <h1>Hi, Ben!</h1>
-            <h3>You have no recent activity</h3>
+
+
+            <div class="row">
+
+              <div class="large-8 medium-8 columns">
+                <h2>Dashboard</h2>
+
+                <h4>Recent Activity:</h4>
+                <table class="activity-feed">
+                  <tr>
+                    <td class="icon"><p><i class="fa fa-thumbs-up"></i></p></td>
+                    <td><p>Ben joined Eatnbe!</p></td>
+                    <td><p><time>2/2/14</time></p></td>
+                  </tr>
+                  <tr>
+                    <td class="icon"><p><i class="fa fa-user"></i></p></td>
+                    <td>
+                      <p><a href="#">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
+                      <br>
+                      <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="#">deny</a></span>
+                    </td>
+                    <td><time>2/2/14<br/>3:14pm</time></td>
+                  </tr>
+                  <tr>
+                    <td class="icon"><p><i class="fa fa-ticket"></i></p></td>
+                    <td><p>Your reservation for <a href="/event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
+                    <td><p><time>2/2/14</time></p></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="large-4 medium-4 columns">
+                <h4>Upcoming Events</h4>
+                <ul>
+                  <li>
+                    <strong><time>12/31/2013 @3pm</time><strong>
+                    <p><a href="event-public.html">Fried Chilly Squid</a></p>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
           </div>
 
         </div>

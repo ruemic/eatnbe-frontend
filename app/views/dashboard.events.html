@@ -1,44 +1,78 @@
 
 <div class="row">
-  <div class="large-6 medium-7 columns events">
+  <div class="large-6 medium-6 columns events">
     <h3><i class="fa fa-cutlery"></i> Your Events:</h3>
     <ul class="no-bullet">
       <li classs="event">
         <h4><a href="#">Turkey Dinner</a> <small>6pm on 2/2/2014</small> <a href="/events/edit/{{event_id}}"><small><i class="fa fa-edit"></i></small></a></h4>
 
-        <table class="expand">
+        <table class="expand guest-approval">
+          <legend>Guest List</legend>
           <thead>
-            <th>Guest</th>
+            <th>Name</th>
             <th>Status</th>
+            <th>Approve?</th>
           </thead>
           <tbody>
-            <tr>
+            <tr class="pending">
+              <td><a href="#">Angela Jolie</a></td>
+              <td><a class="label" href="#">pending</a></td>
+              <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+            </tr>
+            <tr class="confirmed">
               <td><a href="#">Batman</a></td>
               <td><a class="success label" href="#">confirmed</a></td>
+              <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
             </tr>
-            <tr>
-              <td><a href="#">Nikola Tesla</a></td>
-              <td><a class="label" href="#">pending</a></td>
+            <tr class="confirmed">
+              <td><a href="#">Robin</a></td>
+              <td><a class="success label" href="#">confirmed</a></td>
+              <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
             </tr>
-            <tr>
+            <tr class="rejected">
               <td><a href="#">Barney</a></td>
               <td><a class="alert label" href="#">rejected</a></td>
+              <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
             </tr>
           </tbody>
         </table>
-
-
       </li>
     </ul>
 
+    <a class="button small secondary" href="#">PAST EVENTS <i class="fa fa-chevron-down"></i></a>
+
+
   </div>
-  <div class="large-6 medium-5 columns reservations">
-    <h3><i class="fa fa-ticket"></i> Your Reservations:</h3>
+  <div class="large-6 medium-6 columns reservations">
+    <h3><i class="fa fa-ticket"></i> Reservations:</h3>
     <ul class="no-bullet">
       <li>
-
-      <h4><a href="event-public.html">Fried Chilly Squid</a> <small>8pm on 2/17/2014</small> <a class=" label success" href="#">confirmed</a></h4>
+        <small><time>8pm on 2/17/2014</time></small>
+        <h4><a href="event-public.html">Fried Chilly Squid</a></h4>
+        <p>
+          <a class=" label success" href="#">confirmed</a>
+          <a class="right" href="#">contact host <i class="fa fa-user"></i></a>
+        </p>
+      </li>
+      <li>
+        <h4><a href="event-public.html">Entrepreneur Pancake Breakfast</a> <small><time>8am on 10/11/2014</time></small></h4>
+        <p>
+          <a class="pending label" href="#">pending approval</a>
+          <a class="right" href="#">contact host <i class="fa fa-user"></i></a>
+        </p>
       </li>
     </ul>
+    <a class="button small secondary" href="#">PAST RESERVATIONS <i class="fa fa-chevron-down"></i></a>
   </div>
+</div>
+
+<div id="send-a-message" class="reveal-modal" data-reveal>
+  <h2>Send a message to Jillian</h2>
+  <textarea name="message" id="message" cols="30" rows="10">
+    <p class="lead">
+      Your couch.  It is mine.
+    </p>
+  </textarea>
+  <a href="#" class="button">Send!</a>
+  <a class="close-reveal-modal">&#215;</a>
 </div>

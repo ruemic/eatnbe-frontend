@@ -273,11 +273,60 @@ h1,h2,h3 {
 }
 
 
+/* DASHBOARD
+ * -------------------------- */
+
+.activity-feed p {
+  margin-bottom: .2em
+}
+.activity-feed .icon i {
+  font-size: 1.3em;
+  color: #8BA7A7;
+}
+
+
+/* DASHBOARD -- EVENTS
+ * -------------------------- */
+
+.button .fa-chevron-down {
+  margin-left: .7em;
+}
+
+.guest-approval {
+
+}
+
+.guest-approval .label {
+  width: 6em;
+}
+.guest-approval .picker i:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.guest-approval .picker {
+  color: #BBC9CE;
+  text-align: center;
+}
+
+.guest-approval .picker  span {
+  margin: 0 .3em;
+}
+
+.reservations li {
+  border-bottom: 1px solid gray;
+}
+.reservations time {
+  white-space: nowrap;
+}
+
+
 /* DASHBOARD -- MESSAGES
  * -------------------------- */
 .account-dashboard .messages .unread {
   font-weight: 600;
 }
+
 
 
 /* CHECKOUT CONFIRMATION
