@@ -233,6 +233,10 @@ h1,h2,h3 {
 /* DASHBOARD
  * -------------------------- */
 
+.account-dashboard {
+  padding-top: 1em;
+}
+
 .left-off-canvas-menu {
   background: white;
 }
@@ -313,13 +317,22 @@ h1,h2,h3 {
   margin: 0 .3em;
 }
 
+.reservations li:first-child {
+  border-top: 1px solid gray;
+}
+
 .reservations li {
   border-bottom: 1px solid gray;
 }
-.reservations time {
+.reservation time {
   white-space: nowrap;
 }
-
+.reservation {
+  padding-top: .5em;
+}
+.reservation p {
+  margin-bottom: 0.5em;
+}
 
 /* DASHBOARD -- MESSAGES
  * -------------------------- */
