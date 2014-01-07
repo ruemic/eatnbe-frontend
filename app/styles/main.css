@@ -16,6 +16,9 @@ h1,h2,h3 {
   font-family: 'Signika Negative', sans-serif;
 }
 
+.more { display: none }
+
+
 /* HEADER
  * -------------------------- */
 
@@ -233,96 +236,84 @@ h1,h2,h3 {
 /* DASHBOARD
  * -------------------------- */
 
+.dashboard-menu .button {
+  margin-bottom: 0;
+}
+
+
 .account-dashboard {
   padding-top: 1em;
 }
 
-.left-off-canvas-menu {
-  background: white;
-}
-
-.account-dashboard .left-off-canvas-toggle {
-  font-size: 1.4em;
-}
-.account-dashboard .left-off-canvas-toggle i {
-  font-size: 1.5em;
-  vertical-align: middle;
-}
-.move-right a.exit-off-canvas {
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.15), 4px 0 4px rgba(0, 0, 0, 0.5);
-}
-
-.dashboard-menu {
-  margin-bottom: 1.4em;
-}
-.dashboard-menu .active {
-  background: #457DB1 !important;
-  color: white !important;
-}
-.dashboard-menu .expand {
-  text-align: left;
-  margin-bottom: 1px;
-}
-
-.dashboard-menu .expand:hover {
-  background: rgba(69, 125, 177, 0.38);
-}
-.dashboard-menu .expand i {
-  margin-right: .4em;
-  margin-left: .6em;
-
-  font-size: 1.4em;
-  position: relative;
-  top: 0.08em;
-}
-
-
-/* DASHBOARD
- * -------------------------- */
 
 .activity-feed p {
   margin-bottom: .2em
 }
 .activity-feed .icon i {
   font-size: 1.3em;
-  color: #8BA7A7;
+  color: #8B8FA7;
 }
 
+
+.suggested-actions .completed {
+  text-decoration: line-through;
+}
+.suggested-actions .completed i {
+  text-decoration: none;
+  margin-left: .2em;
+}
 
 /* DASHBOARD -- EVENTS
  * -------------------------- */
 
-.button .fa-chevron-down {
-  margin-left: .7em;
+.event,
+.reservation {
+  padding: .6em;
+  position: relative;
+  box-shadow: inset 0 0 0 3px #FFF;
+  background: #F7F9FA;
+  margin-bottom: 0.4em;
+  border: 1px solid #DDD;
 }
 
 .guest-approval {
-
+  width: 100%;
 }
-
 .guest-approval .label {
-  width: 6em;
+  width: 5.6em;
+  padding: 5px 0px
 }
-.guest-approval .picker i:hover {
+.guest-approval .picker .fa {
+  font-size: 1.23em
+}
+
+.guest-approval .picker .fa:hover {
   cursor: pointer;
   color: black;
 }
-
 .guest-approval .picker {
   color: #BBC9CE;
   text-align: center;
 }
-
 .guest-approval .picker  span {
   margin: 0 .3em;
+
 }
 
-.reservations li:first-child {
-  border-top: 1px solid gray;
+.status-row {
+  width: 6.2em;
+}
+.action-row {
+  width: 4.5em;
 }
 
-.reservations li {
-  border-bottom: 1px solid gray;
+.reservation .contact-host {
+  font-size: .8em;
+  position: absolute;
+  bottom: 0.79em;
+  right: 0.6em;
+  display: block;
+  white-space: nowrap;
 }
 .reservation time {
   white-space: nowrap;
@@ -330,9 +321,21 @@ h1,h2,h3 {
 .reservation {
   padding-top: .5em;
 }
+.reservation .price {
+  display: inline-block;
+  position: absolute;
+  right: 0.4em;
+  top: 0.1em;
+}
 .reservation p {
   margin-bottom: 0.5em;
 }
+
+.button .fa-chevron-down {
+  margin-left: .7em;
+}
+
+
 
 /* DASHBOARD -- MESSAGES
  * -------------------------- */

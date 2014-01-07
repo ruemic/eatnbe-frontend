@@ -6,6 +6,11 @@
 
 @media only screen and (min-width: 40.063em) {
 
+  .dashboard-menu li {
+    padding-bottom: 0.7em;
+  }
+
+
   #hero h1 {
     margin: 7em 0 0 0;
     font-size: 2.8em;

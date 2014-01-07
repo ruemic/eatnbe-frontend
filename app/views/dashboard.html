@@ -2,13 +2,13 @@
 
   <div class="row">
 
-    <div class="large-2 medium-3 columns">
-      <ul class="small-block-grid-2 medium-block-grid-1 no-bullet dashboard-menu">
-        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard"><i class="fa fa-dashboard"></i>Overview</a></li>
-        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.profile"><i class="fa fa-user"></i> Profile</a></li>
-        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.events"><i class="fa fa-cutlery"></i> Events</a></li>
-        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.inbox"><i class="fa fa-envelope"></i> Inbox</a></li>
-        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.billing"><i class="fa fa-credit-card"></i>Billing</a></li>
+    <div class="large-2 medium-2 columns">
+      <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
+        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard"><i class="fa fa-dashboard hide-for-medium"></i> Overview</a></li>
+        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.profile"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
+        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.events"><i class="fa fa-cutlery hide-for-medium"></i> Events</a></li>
+        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.inbox"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
+        <li><a class="button secondary expand" ui-sref-active="active" ui-sref="dashboard.billing"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
       </ul>
     </div>
 
@@ -23,37 +23,63 @@
 
           <h4>Recent Activity:</h4>
           <table class="activity-feed">
+
             <tr>
-              <td class="icon"><p><i class="fa fa-thumbs-up"></i></p></td>
-              <td><p>Ben joined Eatnbe!</p></td>
-              <td><p><time>2/2/14</time></p></td>
+              <td class="icon"><p><i class="fa fa-envelope"></i></p></td>
+              <td>
+                <p>You have a <a href="">new message</a> from <a href="">Angelina Jolie</a>.</p>
+              </td>
+              <td><time>2/2/14<br/>8:14pm</time></td>
             </tr>
+
             <tr>
               <td class="icon"><p><i class="fa fa-user"></i></p></td>
               <td>
-                <p><a href="#">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
+                <p><a href="">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
                 <br>
-                <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="#">deny</a></span>
+                <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="">deny</a></span>
               </td>
               <td><time>2/2/14<br/>3:14pm</time></td>
             </tr>
+
             <tr>
               <td class="icon"><p><i class="fa fa-ticket"></i></p></td>
               <td><p>Your reservation for <a href="/event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
-              <td><p><time>2/2/14</time></p></td>
+              <td><time>1/10/14<br/>2:14pm</time></td>
             </tr>
+
+            <tr>
+              <td class="icon"><p><i class="fa fa-thumbs-up"></i></p></td>
+              <td><p>Ben joined Eatnbe!</p></td>
+              <td><time>1/1/14<br/>4:14am</time></td>
+            </tr>
+
+
+
           </table>
         </div>
 
         <div class="large-4 medium-4 columns">
           <h4>Upcoming Events</h4>
-          <ul>
-            <li>
+          <ul class="no-bullet">
+            <li class='panel'>
               <strong><time>12/31/2013 @3pm</time><strong>
               <p><a href="event-public.html">Fried Chilly Squid</a></p>
             </li>
           </ul>
 
+          <h4>Suggested Actions</h4>
+          <ul class='suggested-actions'>
+            <li>
+              <a href="">Invite Your Friends!</a>
+            </li>
+            <li>
+              <a href="">Leave a Review for Nikola Tesla</a></a>
+            </li>
+            <li class="completed">
+              <a href="">Host your first event <i class="fa fa-check"></i></a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -62,3 +88,4 @@
   </div>
 
 </section>
+
