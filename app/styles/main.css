@@ -235,6 +235,12 @@ h1,h2,h3 {
   font-size: 1.3em;
   margin-top: 1em;
 }
+.create-event h3 small {
+  position: relative;
+  top: -.5em;
+  left: .3em;
+}
+
 .create-event dl { margin-bottom: 3em }
 .create-event .active ~ a {
   background: red !important;
@@ -289,9 +295,15 @@ h1,h2,h3 {
 }
 .create-event .amenities img {
   opacity: .5;
+  margin: 0 auto;
+  display: block;
+  transition: opacity .2s ease-in-out;
+  width: 100%;
+}
+.create-event .amenities img:hover {
+  opacity: 1;
 }
 .create-event .amenity-title {
-  text-align: center;
   padding-top: .4em;
 }
 .create-event .amenities input[type="checkbox"]:checked + label {
