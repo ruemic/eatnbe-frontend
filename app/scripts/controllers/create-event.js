@@ -1,4 +1,26 @@
+'use strict';
+
 function CreateEventCtrl($scope) {
+
+  $('#description-textarea').keyup(function() {
+      var text_length = $('#description-textarea').val().length;
+      var text_remaining = 400 - text_length;
+      $('#text-remaining').html(text_remaining);
+
+      if (text_remaining <= 0) {
+        $('#textarea-feedback').addClass("text-limit");
+      } else {
+        $('#textarea-feedback').removeClass("text-limit");
+      }
+
+  });
+
+
+  // Set some defaults
+  $scope.event = {
+    price: 20,
+    guest_limit: 10
+  }
 
   var mapOptions = {
     center: new google.maps.LatLng(37.7833, -122.4167),
@@ -39,23 +61,18 @@ function CreateEventCtrl($scope) {
       return;
     }
 
-
-
-    // marker.setIcon(/** @type {google.maps.Icon} */({
-    //   url: place.icon,
-    //   size: new google.maps.Size(71, 71),
-    //   origin: new google.maps.Point(0, 0),
-    //   scaledSize: new google.maps.Size(25, 25)
-    // }));
-
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
     $("#event-address").html(place.formatted_address);
     $("#gps-coordinates").val(place.geometry.location);
+    $("#event-neighborhood").val(place.address_components[2].long_name);
+
     $("#new-address-radio").attr('checked', 'checked');
 
-    // map.setZoom(16);
+    console.log(place);
+
+    map.setZoom(13);
     map.panTo(place.geometry.location);
 
   });

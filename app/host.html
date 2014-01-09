@@ -39,152 +39,268 @@
       </div>
     </div>
 
-    <form>
+    <form data-abide>
+
       <div class="row">
+        <div class="large-7 medium-7 columns">
 
-        <div class="large-6 medium-6 columns">
 
-          <dl class="accordion" data-accordion>
+          <h3>About:</h3>
+          <div class="row">
 
-            <dd>
-              <a href="#about-me"><i class="fa fa-user"></i> About the Host:</a>
-              <div class="content" id="about-me">
-                <p>About you form goes here</p>
-              </div>
-            </dd>
+            <div class="large-6 columns">
+              <label for="">Upload an image to represent your event:</label>
+              <img src="http://placehold.it/500x360" class="event-img expand" alt="">
+              <input type="file" data-ng-model="event.image">
+            </div>
 
-            <dd>
-            <a href="#about-event"><i class="fa fa-edit"></i> The Essential Details</a>
+            <div class="large-6 columns">
+              <label>Give your event a name</label>
+              <input type="text" placeholder='e.g. "Masti pasta"' data-ng-model="event.title" >
+              <small class="error" data-error-message="">Your event must have a name</small>
 
-              <div class="content active" id="about-event">
+              <label>Describe your meal <span id="textarea-feedback">(<span id="text-remaining">400</span> characters left)</span></label>
+              <textarea
+                id="description-textarea"
+                placeholder='please enter a description of your event'
+                data-ng-model="event.description"
+                max-length="400"
+                cols="30"
+                required
+                ></textarea>
+              <small class="error" data-error-message="">Your event must have a description</small>
 
-                <label>Name</label>
-                <input type="text" placeholder='e.g. "Masti pasta"' data-ng-model="event.title" >
+            </div>
 
-                <label for="">Upload an Image</label>
-                <img src="http://placehold.it/300x214" class="expand" alt="">
-                <input type="file" data-ng-model="event.image">
+          </div>
 
-                <label>Description</label>
-                <textarea placeholder='please enter a description of your event' data-ng-model="event.description"></textarea>
+          <h3>Time:</h3>
+          <div class="row">
+            <div class="large-5 medium-5 small-6 columns">
+              <label>Date</label>
+              <input data-ng-model="event.date" type="date"/>
+              <small class="error" data-error-message="">Your event must have a date</small>
 
-                <div class="row">
+            </div>
 
-                  <div class="large-6 medium-6 small-6 columns">
-                    <label>Date</label>
-                    <input data-ng-model="event.date" type="date"/>
-                  </div>
+            <div class="large-5 medium-5 small-6 columns">
+              <label>Start Time</label>
+              <input type="time" data-ng-model="event.time"/>
+              <small class="error" data-error-message="">Your event must have a time</small>
 
-                  <div class="large-6 medium-6 small-6 columns">
-                    <label>Start Time</label>
-                    <input type="time" data-ng-model="event.time"/>
-                  </div>
+            </div>
 
-                </div>
+          </div>
 
-                <div class="row">
-                  <div class="large-6 medium-6 small-6 columns">
-                    <label>Price per guest</label>
-                    <div class="row">
-                      <div class="large-6 medium-6 small-12 columns">
-                        <input type="number" data-ng-model="event.price" placeholder='e.g. $25'/>
+
+          <h3>Pricing:</h3>
+
+          <div class="row">
+
+            <div class="large-5 medium-5 small-6 columns">
+              <label>Price ($USD)</label>
+              <input type="number" data-ng-model="event.price" placeholder='e.g. $25' required/>
+              <small class="error" data-error-message="">Your event must have a price</small>
+            </div>
+
+            <div class="large-5 medium-5 small-6 columns">
+              <label>Guest Limit</label>
+              <input type="number" data-ng-model="event.guest_limit" placeholder='8'/>
+            </div>
+
+          </div>
+
+          <div class="earnings alert-box success row">
+            <div class="small-12 columns">
+              <p><i class="fa fa-dollar large"></i> You could earn up to <strong ng-bind-template="${{event.price * event.guest_limit}}"></strong> from hosting this event!</div></p>
+            </div>
+
+          <div class="row addresses">
+            <div class="large-12 medium-12 columns ">
+              <h3>Location:</h3>
+
+              <ul class="no-bullet">
+
+                <li class="existing-address">
+                  <label class='panel clearfix'>
+                    <p class="row">
+                      <div class="large-2 medium-2 small-2 columns">
+                        <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
                       </div>
-                    </div>
-                  </div>
-
-                  <div class="large-6 medium-6 small-6 columns">
-                    <label>Number of guests</label>
-                    <div class="row">
-                      <div class="large-6 medium-6 small-12 columns">
-                        <input type="number" placeholder='8'/>
+                      <div class="large-10 medium-10 small-10 columns">
+                        <address>123 Franklin Lane, Palo Alto, CA 94306, USA</address>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                    </p>
+                  </label>
+                </li>
 
-                <div class="row">
-                  <div class="large-12 medium-12 columns addresses">
-                    <h3>Choose a Location:</h3>
+                <li class="existing-address">
+                  <label class='panel clearfix'>
+                    <p class="row">
+                      <div class="large-2 medium-2 small-2 columns">
+                        <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
+                      </div>
+                      <div class="large-10 medium-10 small-10 columns">
+                        <address>990 Wave Street, Santa Cruz, CA 94306, USA</address>
+                      </div>
+                    </p>
+                  </label>
+                </li>
 
-                    <p>Existing addresses:</p>
+                <li class='new-address panel'>
+                  <label>
+                    <p class="row">
+                      <div class="large-2 medium-2 small-2 columns">
+                        <input id="new-address-radio" type="radio" name="addresses[]" value="">
+                      </div>
+                      <div class="large-10 medium-10 small-10 columns">
+                        <address id="event-address" data-ng-model="event.address">
+                          Choose a new address
+                        </address>
+                      </div>
+                    </p>
+                  </label>
 
-                    <ul class="no-bullet">
+                  <input type="text" id="address-input" />
+                  <div id="map_canvas"></div>
+                </li>
 
-                      <li class="existing-address">
-                        <label class='panel clearfix'>
-                          <p class="row">
-                            <div class="large-2 medium-2 small-2 columns">
-                              <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
-                            </div>
-                            <div class="large-10 medium-10 small-10 columns">
-                              <address>123 Franklin Lane, Palo Alto, CA 94306, USA</address>
-                            </div>
-                          </p>
-                        </label>
-                      </li>
-
-                      <li class="existing-address">
-                        <label class='panel clearfix'>
-                          <p class="row">
-                            <div class="large-2 medium-2 small-2 columns">
-                              <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
-                            </div>
-                            <div class="large-10 medium-10 small-10 columns">
-                              <address>990 Wave Street, Santa Cruz, CA 94306, USA</address>
-                            </div>
-                          </p>
-                        </label>
-                      </li>
-                    </ul>
-
-                    <p>New address:</p>
-                    <div class='new-address panel'>
-                      <label>
-                        <p class="row">
-                          <div class="large-2 medium-2 small-2 columns">
-                            <input id="new-address-radio" type="radio" name="addresses[]" value="">
-                          </div>
-                          <div class="large-10 medium-10 small-10 columns">
-                            <address id="event-address" data-ng-model="event.address">
-                              Please find your location on the map
-                            </address>
-                          </div>
-                        </p>
-                      </label>
-
-                      <input type="text" id="address-input" />
-                      <div id="map_canvas"></div>
-                    </div>
+              </ul>
 
 
-                    <div>
-                      <input type="text" id="gps-coordinates" placeholder="gps coords">
-                    </div>
-
-                  </div>
-                </div>
+              <div>
+                <p>For EatnBe dev team</p>
+                <input type="text" id="gps-coordinates" placeholder="gps coords" >
+                <input type="text" id="event-neighborhood" placeholder="event-neighborhood" >
 
               </div>
 
-            </dd>
+            </div>
+          </div>
 
-          </dl>
+          <div class="row amenities">
+            <div class="large-12 columns">
+              <h3>Amenities:</h3>
+
+              <ul class="large-block-grid-4 small-block-grid-3">
+                <li>
+                  <input type="checkbox" id="ac" name="amenity[]" class="Air_Conditioning" value="70" style="display: none;">
+
+                  <label for="ac">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Air_Conditioning.png" data-option="Air_Conditioning" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Air Conditioning</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Elevator_Accessible" value="68" style="display: none;" id="elevator">
+
+                  <label for="elevator">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Elevator_Accessible.png" data-option="Elevator_Accessible" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Elevator Accessible</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Family_Friendly" value="75" style="display: none;" id="family">
+                  <label for="family">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Family_Friendly.png" data-option="Family_Friendly" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Family Friendly</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Free_Parking_On_Premises" value="64" style="display: none;" id="parking">
+                  <label for="parking">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Free_Parking_On_Premises.png" data-option="Free_Parking_On_Premises" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Free Parking On Premises</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Handicap_Accessible" value="69" style="display: none;" id="handicap-accessible">
+                  <label for="handicap-accessible">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Handicap_Accessible.png" data-option="Handicap_Accessible" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Handicap Accessible</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Heating" value="71" style="display: none;" id="heating">
+                  <label for="heating">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Heating.png" data-option="Heating" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Heating</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Kids_Friendly" value="74" style="display: none;" id="kids">
+                  <label for="kids">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Kids_Friendly.png" data-option="Kids_Friendly" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Kids Friendly</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Paid_Parking_Nearby" value="66" style="display: none;" id="paid-parking">
+                  <label for="paid-parking">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Paid_Parking_Nearby.png" data-option="Paid_Parking_Nearby" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Paid Parking Nearby</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Pets_In_House" value="76" style="display: none;" id="pets">
+                  <label for="pets">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Pets_In_House.png" data-option="Pets_In_House" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Pets In House</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Public_Transportation" value="67" style="display: none;" id="public-transit">
+                  <label for="public-transit">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Public_Transportation.png" data-option="Public_Transportation" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Public Transportation</>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Smoking_Allowed_Inside" value="72" style="display: none;" id="smoking-inside">
+                  <label for="smoking-inside">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Smoking_Allowed_Inside.png" data-option="Smoking_Allowed_Inside" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Smoking Allowed Inside </>
+                </li>
+
+                <li>
+                  <input type="checkbox" name="amenity[]" class="Street_Parking" value="65" style="display: none;" id="street-parking">
+                  <label for="street-parking">
+                    <img src="http://27.251.32.9:1008/eatnbe_new/skin/frontend/citrisys/eatnbe/images/amenities/Street_Parking.png" data-option="Street_Parking" class="amenity-img">
+                  </label>
+                  <p class="text-center amenity-title">Street Parking </>
+                </li>
+              </ul>
+
+
+            </div>
+          </div>
 
         </div>
 
-        <div class="large-6 medium-6 columns">
+        <div class="large-5 medium-5 columns">
 
           <div class="row">
-            <div class="preview large-12 columns">
+
+            <div class="preview large-12 columns ">
 
               <div class="row">
                 <div class="large-12 columns">
-                  <h3>Preview:<br><small>Here's how your event will look in search results:</small></h3>
+                  <h3>Search Result Preview:</h3>
                 </div>
               </div>
 
-
-              <article class="row result">
+              <article class="result clearfix">
 
                 <div class="large-12 columns">
 
@@ -206,15 +322,19 @@
                 </div>
 
               </article>
+
             </div>
 
-            <div class="large-6 columns">
+            <div class="large-12 columns">
               <button class="large expand">Create Event</button>
             </div>
           </div>
+
         </div>
 
       </div>
+
+
     </form>
 
   </section>
@@ -253,21 +373,18 @@
   </footer>
 
 
-<!-- GLOBAL JS -->
-<script src="scripts/jquery.js"></script>
-<script src="scripts/foundation.min.js"></script>
-<script src="scripts/vendor/angular.min.js"></script>
+  <!-- GLOBAL JS -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
 
+  <!-- CREATE EVENT JS -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+  <script src="scripts/controllers/create-event.js"></script>
 
-
-<!-- CREATE EVENT JS -->
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
-<script src="scripts/controllers/create-event.js"></script>
-
-<script>
+  <script>
   $(document).foundation();
-</script>
+  </script>
 
 </body>
 </html>
