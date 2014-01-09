@@ -175,6 +175,7 @@ h1,h2,h3 {
 .result .pic-wrapper {
   float: left;
   padding-right: 10px;
+  position: relative;
 }
 
 .result .pic-wrapper {
@@ -231,6 +232,26 @@ h1,h2,h3 {
  * -------------------------- */
 
 .create-event dl { margin-bottom: 3em }
+.create-event .active ~ a {
+  background: red !important;
+}
+
+.address-title {
+  margin-bottom: .2em;
+}
+.exisiting-address address {
+  margin-bottom: 1.2em;
+}
+.new-address address {
+  margin-bottom: 2em;
+}
+
+.preview .result {
+  border: 1px solid #E4E4E4;
+  background: #FFF;
+  position: relative;
+}
+
 
 
 /* DASHBOARD

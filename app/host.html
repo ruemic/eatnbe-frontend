@@ -31,113 +31,191 @@
       </div>
     </div>
   </header>
-  <section class="create-event">
+
+  <section class="create-event" ng-controller="CreateEventCtrl" ng-app>
     <div class="row">
-      <div class="columns large-12">
+      <div class="large-12 columns">
         <h1>Create an Event</h1>
       </div>
     </div>
 
-    <form action="event-public.html">
+    <form>
       <div class="row">
-        <div class="columns large-8">
+
+        <div class="large-6 medium-6 columns">
 
           <dl class="accordion" data-accordion>
+
             <dd>
-              <a href="#about-me">About You</a>
+              <a href="#about-me"><i class="fa fa-user"></i> About the Host:</a>
               <div class="content" id="about-me">
                 <p>About you form goes here</p>
               </div>
             </dd>
+
             <dd>
-              <a href="#about-event">About Your Event</a>
+            <a href="#about-event"><i class="fa fa-edit"></i> The Essential Details</a>
+
               <div class="content active" id="about-event">
 
-                  <label>Name</label>
-                  <input type="text" placeholder='e.g. "Masti pasta"'>
+                <label>Name</label>
+                <input type="text" placeholder='e.g. "Masti pasta"' data-ng-model="event.title" >
 
-                  <div class="row">
-                    <div class="large-6 medium-6 small-6 columns">
-                      <label>Date</label>
-                      <div class="row">
-                        <div class="large-6 medium-6 small-12 columns">
-                          <input type="text" placeholder='mm/dd/year'/>
-                        </div>
-                      </div>
-                    </div>
+                <label for="">Upload an Image</label>
+                <img src="http://placehold.it/300x214" class="expand" alt="">
+                <input type="file" data-ng-model="event.image">
 
-                    <div class="large-6 medium-6 small-6 columns">
-                      <label>Start Time:</label>
-                      <div class="row">
-                        <div class="large-6 medium-6 small-12 columns">
-                          <input type="text" placeholder='18:00'/>
-                        </div>
+                <label>Description</label>
+                <textarea placeholder='please enter a description of your event' data-ng-model="event.description"></textarea>
+
+                <div class="row">
+
+                  <div class="large-6 medium-6 small-6 columns">
+                    <label>Date</label>
+                    <input data-ng-model="event.date" type="date"/>
+                  </div>
+
+                  <div class="large-6 medium-6 small-6 columns">
+                    <label>Start Time</label>
+                    <input type="time" data-ng-model="event.time"/>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="large-6 medium-6 small-6 columns">
+                    <label>Price per guest</label>
+                    <div class="row">
+                      <div class="large-6 medium-6 small-12 columns">
+                        <input type="number" data-ng-model="event.price" placeholder='e.g. $25'/>
                       </div>
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="large-6 medium-6 small-6 columns">
-                      <label>Price per guest</label>
-                      <div class="row">
-                        <div class="large-6 medium-6 small-12 columns">
-                          <input type="number" placeholder='e.g. $25'/>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="large-6 medium-6 small-6 columns">
-                      <label>Number of guests</label>
-                      <div class="row">
-                        <div class="large-6 medium-6 small-12 columns">
-                          <input type="number" placeholder='8'/>
-                        </div>
+                  <div class="large-6 medium-6 small-6 columns">
+                    <label>Number of guests</label>
+                    <div class="row">
+                      <div class="large-6 medium-6 small-12 columns">
+                        <input type="number" placeholder='8'/>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="row">
-                    <div class="large-8 medium-8 columns">
-                      <fieldset>
-                        <legend>Location</legend>
-                        <label>Address</label>
-                        <p><select><option selected>123 Testing Lane, Palo Alto, CA</option></select></p>
-                        <p>Or <a href="#">Enter a new billing address</a></p>
-                      </fieldset>
+                <div class="row">
+                  <div class="large-12 medium-12 columns addresses">
+                    <h3>Choose a Location:</h3>
+
+                    <p>Existing addresses:</p>
+
+                    <ul class="no-bullet">
+
+                      <li class="existing-address">
+                        <label class='panel clearfix'>
+                          <p class="row">
+                            <div class="large-2 medium-2 small-2 columns">
+                              <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
+                            </div>
+                            <div class="large-10 medium-10 small-10 columns">
+                              <address>123 Franklin Lane, Palo Alto, CA 94306, USA</address>
+                            </div>
+                          </p>
+                        </label>
+                      </li>
+
+                      <li class="existing-address">
+                        <label class='panel clearfix'>
+                          <p class="row">
+                            <div class="large-2 medium-2 small-2 columns">
+                              <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
+                            </div>
+                            <div class="large-10 medium-10 small-10 columns">
+                              <address>990 Wave Street, Santa Cruz, CA 94306, USA</address>
+                            </div>
+                          </p>
+                        </label>
+                      </li>
+                    </ul>
+
+                    <p>New address:</p>
+                    <div class='new-address panel'>
+                      <label>
+                        <p class="row">
+                          <div class="large-2 medium-2 small-2 columns">
+                            <input id="new-address-radio" type="radio" name="addresses[]" value="">
+                          </div>
+                          <div class="large-10 medium-10 small-10 columns">
+                            <address id="event-address" data-ng-model="event.address">
+                              Please find your location on the map
+                            </address>
+                          </div>
+                        </p>
+                      </label>
+
+                      <input type="text" id="address-input" />
+                      <div id="map_canvas"></div>
                     </div>
-                  </div>
 
+
+                    <div>
+                      <input type="text" id="gps-coordinates" placeholder="gps coords">
+                    </div>
+
+                  </div>
+                </div>
 
               </div>
+
             </dd>
-            <dd>
-              <a href="#more-about-event">Tell us more about your event</a>
-              <div class="content" id="more-about-event">
-                <p>More event info form goes here.</p>
-              </div>
-            </dd>
+
           </dl>
 
         </div>
-      </div>
 
-      <div class="row">
-        <div class="large-8 columns">
+        <div class="large-6 medium-6 columns">
+
           <div class="row">
-            <div class="large-6 columns">
-              <button class="secondary large expand">Preview Event</button>
+            <div class="preview large-12 columns">
+
+              <div class="row">
+                <div class="large-12 columns">
+                  <h3>Preview:<br><small>Here's how your event will look in search results:</small></h3>
+                </div>
+              </div>
+
+
+              <article class="row result">
+
+                <div class="large-12 columns">
+
+                  <div class="pic-wrapper small-5 medium-4 large-5">
+                    <a href="event-public.html" class="event-link">
+                      <img src="http://placehold.it/300x214" class="expand" alt="">
+                      <span class="price" ng-bind-template="${{event.price}}"></span>
+                    </a>
+                    <p class="host">
+                      <a href="#"><small>Bob</small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></small></a>
+                    </p>
+                  </div>
+
+                  <div class="main-text">
+                    <h4 class="title" class="price"><span ng-bind-template="{{event.title}}">Turkey Dinner</span><br/><small><span ng-bind-template="{{event.date}}">12/3/12</span> <span ng-bind-template="{{event.time}}">3:00PM</span></small></h4>
+                    <p class="description" ng-bind-template="{{event.description}}">It's gonna be damn tasty.</p>
+                  </div>
+
+                </div>
+
+              </article>
             </div>
+
             <div class="large-6 columns">
               <button class="large expand">Create Event</button>
             </div>
           </div>
         </div>
+
       </div>
-
     </form>
-
-
-
 
   </section>
 
@@ -175,19 +253,21 @@
   </footer>
 
 
+<!-- GLOBAL JS -->
 <script src="scripts/jquery.js"></script>
 <script src="scripts/foundation.min.js"></script>
-<script src="scripts/history.js"></script>
-<script src="scripts/history.adapter.jquery.js"></script>
+<script src="scripts/vendor/angular.min.js"></script>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
-<script src="scripts/vendor/gmaps.js"></script>
 
-<script src="scripts/app.js"></script>
+<!-- CREATE EVENT JS -->
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+<script src="scripts/controllers/create-event.js"></script>
 
 <script>
   $(document).foundation();
 </script>
+
 </body>
 </html>
