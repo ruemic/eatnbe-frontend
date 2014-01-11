@@ -319,6 +319,13 @@ h1,h2,h3 {
 
 .dashboard-menu .button {
   margin-bottom: 0;
+  text-align: left;
+}
+
+.dashboard-menu .button i {
+  width: 1.5em;
+  margin-left: .3em;
+  text-align: center;
 }
 
 

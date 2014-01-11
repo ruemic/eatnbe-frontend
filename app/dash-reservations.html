@@ -41,91 +41,79 @@
           <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
           <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-home hide-for-medium"></i> My Events</a></li>
           <li><a class="button secondary expand" href="dash-reservations.html"><i class="fa fa-ticket hide-for-medium"></i> Reservations</a></li>
-
           <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
           <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
         </ul>
       </div>
 
 
-      <div class="large-10 medium-9 columns" ui-view="">
+      <div class="large-10 medium-9 columns">
 
         <div class="row">
 
-          <div class="large-8 medium-8 columns">
-
-            <h2>Dashboard</h2>
-
-            <h4>Recent Activity:</h4>
-            <table class="activity-feed">
-
-              <tr>
-                <td class="icon"><p><i class="fa fa-envelope"></i></p></td>
-                <td>
-                  <p>You have a <a href="">new message</a> from <a href="">Angelina Jolie</a>.</p>
-                </td>
-                <td><time>2/2/14<br/>8:14pm</time></td>
-              </tr>
-
-              <tr>
-                <td class="icon"><p><i class="fa fa-user"></i></p></td>
-                <td>
-                  <p><a href="">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
-                  <br>
-                  <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="">deny</a></span>
-                </td>
-                <td><time>2/2/14<br/>3:14pm</time></td>
-              </tr>
-
-              <tr>
-                <td class="icon"><p><i class="fa fa-ticket"></i></p></td>
-                <td><p>Your reservation for <a href="/event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
-                <td><time>1/10/14<br/>2:14pm</time></td>
-              </tr>
-
-              <tr>
-                <td class="icon"><p><i class="fa fa-thumbs-up"></i></p></td>
-                <td><p>Ben joined Eatnbe!</p></td>
-                <td><time>1/1/14<br/>4:14am</time></td>
-              </tr>
-
-
-
-            </table>
-          </div>
-
-          <div class="large-4 medium-4 columns">
-            <h4>Upcoming Events</h4>
+          <div class="large-12 medium-12 columns reservations">
+            <h3><i class="fa fa-ticket"></i> Reservations:</h3>
             <ul class="no-bullet">
-              <li class='panel'>
-                <strong><time>12/31/2013 @3pm</time><strong>
-                <p><a href="event-public.html">Fried Chilly Squid</a></p>
-              </li>
-            </ul>
 
-            <h4>Suggested Actions</h4>
-            <ul class='suggested-actions'>
-              <li>
-                <a href="">Invite Your Friends!</a>
+              <li class="reservation">
+                <div class="row">
+
+                  <div class="large-9 medium-9 small-9 columns">
+                    <h5><a href="event-public.html">Fried Chilly Squid (1 ticket)</a> <small><br><time>8pm on 2/17/2014</time></small></h5>
+                    <a><label class="label success" href="#">confirmed</label> <small>View Receipt</small></a>
+                  </div>
+                  <h3 class="price text-right">$22</h3>
+                  <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
+
+                </div>
               </li>
-              <li>
-                <a href="">Leave a Review for Nikola Tesla</a></a>
+
+              <li class="reservation">
+                <div class="row">
+
+                  <div class="large-9 medium-9 small-9 columns">
+                    <h5><a href="event-public.html">Entrepreneur Pancake Breakfast (2 tickets)</a><br><small><time>8am on 10/11/2014</time></small></h5>
+                    <a class="pending label" href="#">pending approval</a>
+                  </div>
+                  <h3 class="price">$22</h3>
+                  <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
+                </div>
               </li>
-              <li class="completed">
-                <a href="">Host your first event <i class="fa fa-check"></i></a>
-              </li>
+
             </ul>
+            <a class="button small secondary" ng-click="showMore()">PAST RESERVATIONS <i class="fa fa-chevron-down"></i></a>
+            <div class="more">
+
+              <ul class="no-bullet">
+                <li class="past reservation">
+                  <div class="row">
+
+                    <div class="large-9 medium-9 small-9 columns">
+                      <h5><a href="event-public.html">Fried Chilly Squid (1 ticket)</a> <small><br><time>8pm on 2/17/2014</time></small></h5>
+                      <a><label class="label success" href="#">confirmed</label> <small>View Receipt</small></a>
+                    </div>
+                    <h3 class="price text-right">$22</h3>
+                    <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
+
+                  </div>
+                </li>
+              </ul>
+
+            </div>
           </div>
+        </div>
 
+        <div id="send-a-message" class="reveal-modal small" data-reveal>
+          <h2>Send a message to Jillian</h2>
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message for Jillian here"></textarea>
+          <a href="#" class="button">Send!</a>
+          <a ng-click="closeModal()" class="close-reveal-modal">&#215;</a>
         </div>
       </div>
 
     </div>
 
   </section>
-
-
-
 
   <footer class="site-footer">
     <div class="row">
