@@ -1,10 +1,24 @@
 'use strict';
 
-angular.module('eatnbeApp')
-  .controller('ResultsCtrl', function ($scope, eventService) {
+angular.module('eatnbeApp', ['ngResource'])
 
+  .factory('eventService', function ($resource) {
+
+    return $resource('events/:eventId.json', {}, {
+      query: { method: 'GET', params: {eventId: 'events'}, isArray:true }
+    });
+
+  })
+
+  .controller('ResultsCtrl', function ($scope, $location, eventService) {
+
+    // Get the search params
+    console.log( $location.search() );
+
+    // Get the data, TODO use search params to query real data source
     $scope.events = eventService.query();
 
+    // draw a GMap
     var map = new GMaps({
       lat: 36.9575335,
       lng: -122.0400129,
@@ -36,4 +50,4 @@ angular.module('eatnbeApp')
       }
     });
 
-  });
+});

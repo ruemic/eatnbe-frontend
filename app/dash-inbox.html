@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EatnBe | peer-to-peer food network</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="styles/font-awesome.css" />
+  <link rel="stylesheet" href="styles/foundation.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <script src="scripts/modernizr.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="row">
+      <div class="large-3 medium-4 columns">
+        <a href="index.html"><img src="img/logo.png" alt="eatnbe" class="logo"></a>
+      </div>
+
+      <div class="large-6 medium-6 columns">
+        <ul class="inline-list right main-nav">
+          <li><a href="dashboard.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="account-dashboard" ng-controller="DashboardCtrl" ng-app>
+
+    <div class="row">
+
+      <div class="large-2 medium-2 columns">
+        <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard hide-for-medium"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
+          <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-cutlery hide-for-medium"></i> Events</a></li>
+          <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
+          <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
+        </ul>
+      </div>
+
+
+      <div class="large-10 medium-9 columns">
+
+        <div class="row">
+          <div class="large-6 medium-7 columns">
+            <h3>Your Inbox:</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns messages">
+          <table>
+            <thead>
+              <tr>
+                <th>Sender</th>
+                <th>Message</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="unread">
+                <td>
+                  <img src="http://placehold.it/40x40" class="expand" alt="">
+                  Nikola Tesla</td>
+                <td><a href=""><p>Hey! Saw your event about the turkey! Any chance of there being a gluten free stuffing?</p></a></td>
+                <td>12/31/13</td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="http://placehold.it/40x40" class="expand" alt="">
+                  Batman</td>
+                <td><a href=""><p>I'll be standing where l belong. Between you and the peopIe of Gotham.</p></a></td>
+                <td>12/31/13</td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="http://placehold.it/40x40" class="expand" alt="">
+                  Cheese Lady</td>
+                <td><a href=""><p>When the cheese comes out everybody's happy manchego. Caerphilly everyone loves who moved</p></a></td>
+                <td>12/31/13</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="row">
+      <div class="large-4 medium-4 columns">
+        <h4>Company</h4>
+        <ul class="no-bullet">
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Legal</h4>
+        <ul class="no-bullet">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/privacy">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Connect with us</h4>
+        <ul class="inline-list social-sharing">
+          <li><a href="https://www.facebook.com/EatnBe"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/eatnbe"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="text-center"><small>© 2013 eatnbe - peer-to-peer food network. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- GLOBAL JS -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
+
+  <!-- PAGE SPECIFIC JS -->
+  <script src="scripts/controllers/dashboard.js"></script>
+
+  <!-- MORE GLOBAL JS -->
+
+  <script>
+  $(document).foundation();
+  </script>
+
+</body>
+</html>

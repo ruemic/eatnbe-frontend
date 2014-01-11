@@ -3,15 +3,15 @@
 function CreateEventCtrl($scope) {
 
   $('#description-textarea').keyup(function() {
-      var text_length = $('#description-textarea').val().length;
-      var text_remaining = 400 - text_length;
-      $('#text-remaining').html(text_remaining);
+    var text_length = $('#description-textarea').val().length;
+    var text_remaining = 400 - text_length;
+    $('#text-remaining').html(text_remaining);
 
-      if (text_remaining <= 0) {
-        $('#textarea-feedback').addClass("text-limit");
-      } else {
-        $('#textarea-feedback').removeClass("text-limit");
-      }
+    if (text_remaining <= 0) {
+      $('#textarea-feedback').addClass("text-limit");
+    } else {
+      $('#textarea-feedback').removeClass("text-limit");
+    }
 
   });
 
@@ -69,8 +69,6 @@ function CreateEventCtrl($scope) {
     $("#event-neighborhood").val(place.address_components[2].long_name);
 
     $("#new-address-radio").attr('checked', 'checked');
-
-    console.log(place);
 
     map.setZoom(13);
     map.panTo(place.geometry.location);

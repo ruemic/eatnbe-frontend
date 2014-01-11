@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EatnBe | peer-to-peer food network</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="styles/font-awesome.css" />
+  <link rel="stylesheet" href="styles/foundation.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <script src="scripts/modernizr.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="row">
+      <div class="large-3 medium-4 columns">
+        <a href="index.html"><img src="img/logo.png" alt="eatnbe" class="logo"></a>
+      </div>
+
+      <div class="large-6 medium-6 columns">
+        <ul class="inline-list right main-nav">
+          <li><a href="dashboard.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="account-dashboard" ng-controller="DashboardCtrl" ng-app>
+
+    <div class="row">
+
+      <div class="large-2 medium-2 columns">
+        <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard hide-for-medium"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
+          <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-cutlery hide-for-medium"></i> Events</a></li>
+          <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
+          <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
+        </ul>
+      </div>
+
+
+      <div class="large-10 medium-9 columns">
+
+        <div class="row">
+          <div class="large-6 medium-7 columns">
+            <h3>Profile for Benjamin Franklin</h3>
+            <p><strong>Name</strong>: Ben Franklin</p>
+            <p><strong>Email</strong>: ben@franklin.com</p>
+            <p><strong>Languages</strong>: English</p>
+            <p><strong>Profession</strong>: Inventor</p>
+            <p><strong>Bio</strong>: Benjamin Franklin was born in Boston on January 17, 1706. He was the tenth son of soap maker, Josiah Franklin. Benjamin's mother was Abiah Folger, the second wife of Josiah. In all, Josiah would father 17 children.
+            <br/><br/>
+            of the Executive Council of Pennsylvania. He served as a delegate to the Constitutional Convention and signed the Constitution. One of his last public acts was writing an anti-slavery treatise in 1789.
+            <br/><br/>
+            Franklin died on April 17, 1790 at the age of 84. 20,000 people attended the funeral of the man who was called, "the harmonious human multitude."</p>
+
+          </div>
+          <div class="large-6 medium-5 columns">
+            <img src="http://placehold.it/300x300" class="expand" alt="">
+            <p>Update Image <input type="file"></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="row">
+      <div class="large-4 medium-4 columns">
+        <h4>Company</h4>
+        <ul class="no-bullet">
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Legal</h4>
+        <ul class="no-bullet">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/privacy">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Connect with us</h4>
+        <ul class="inline-list social-sharing">
+          <li><a href="https://www.facebook.com/EatnBe"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/eatnbe"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="text-center"><small>© 2013 eatnbe - peer-to-peer food network. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- GLOBAL JS -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
+
+  <!-- PAGE SPECIFIC JS -->
+  <script src="scripts/controllers/dashboard.js"></script>
+
+  <!-- MORE GLOBAL JS -->
+
+  <script>
+  $(document).foundation();
+  </script>
+
+</body>
+</html>

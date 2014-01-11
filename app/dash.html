@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EatnBe | peer-to-peer food network</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="styles/font-awesome.css" />
+  <link rel="stylesheet" href="styles/foundation.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <script src="scripts/modernizr.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="row">
+      <div class="large-3 medium-4 columns">
+        <a href="index.html"><img src="img/logo.png" alt="eatnbe" class="logo"></a>
+      </div>
+
+      <div class="large-6 medium-6 columns">
+        <ul class="inline-list right main-nav">
+          <li><a href="dashboard.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="account-dashboard" ng-controller="DashboardCtrl" ng-app>
+
+    <div class="row">
+
+      <div class="large-2 medium-2 columns">
+        <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard hide-for-medium"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
+          <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-cutlery hide-for-medium"></i> Events</a></li>
+          <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
+          <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
+        </ul>
+      </div>
+
+
+      <div class="large-10 medium-9 columns" ui-view="">
+
+        <div class="row">
+
+          <div class="large-8 medium-8 columns">
+
+            <h2>Dashboard</h2>
+
+            <h4>Recent Activity:</h4>
+            <table class="activity-feed">
+
+              <tr>
+                <td class="icon"><p><i class="fa fa-envelope"></i></p></td>
+                <td>
+                  <p>You have a <a href="">new message</a> from <a href="">Angelina Jolie</a>.</p>
+                </td>
+                <td><time>2/2/14<br/>8:14pm</time></td>
+              </tr>
+
+              <tr>
+                <td class="icon"><p><i class="fa fa-user"></i></p></td>
+                <td>
+                  <p><a href="">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
+                  <br>
+                  <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="">deny</a></span>
+                </td>
+                <td><time>2/2/14<br/>3:14pm</time></td>
+              </tr>
+
+              <tr>
+                <td class="icon"><p><i class="fa fa-ticket"></i></p></td>
+                <td><p>Your reservation for <a href="/event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
+                <td><time>1/10/14<br/>2:14pm</time></td>
+              </tr>
+
+              <tr>
+                <td class="icon"><p><i class="fa fa-thumbs-up"></i></p></td>
+                <td><p>Ben joined Eatnbe!</p></td>
+                <td><time>1/1/14<br/>4:14am</time></td>
+              </tr>
+
+
+
+            </table>
+          </div>
+
+          <div class="large-4 medium-4 columns">
+            <h4>Upcoming Events</h4>
+            <ul class="no-bullet">
+              <li class='panel'>
+                <strong><time>12/31/2013 @3pm</time><strong>
+                <p><a href="event-public.html">Fried Chilly Squid</a></p>
+              </li>
+            </ul>
+
+            <h4>Suggested Actions</h4>
+            <ul class='suggested-actions'>
+              <li>
+                <a href="">Invite Your Friends!</a>
+              </li>
+              <li>
+                <a href="">Leave a Review for Nikola Tesla</a></a>
+              </li>
+              <li class="completed">
+                <a href="">Host your first event <i class="fa fa-check"></i></a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+  <footer class="site-footer">
+    <div class="row">
+      <div class="large-4 medium-4 columns">
+        <h4>Company</h4>
+        <ul class="no-bullet">
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Legal</h4>
+        <ul class="no-bullet">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/privacy">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Connect with us</h4>
+        <ul class="inline-list social-sharing">
+          <li><a href="https://www.facebook.com/EatnBe"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/eatnbe"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="text-center"><small>© 2013 eatnbe - peer-to-peer food network. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- GLOBAL JS -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
+
+  <!-- PAGE SPECIFIC JS -->
+  <script src="scripts/controllers/dashboard.js"></script>
+
+  <!-- MORE GLOBAL JS -->
+
+  <script>
+  $(document).foundation();
+  </script>
+
+</body>
+</html>

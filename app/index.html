@@ -17,23 +17,13 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/responsive.css" />
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css({.tmp,app}) styles/main.css -->
-
-
     <script src="scripts/modernizr.js"></script>
 
-    <!-- endbuild -->
   </head>
-  <body ng-app="eatnbeApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
 
     <header class="site-header">
       <div class="row">
@@ -51,7 +41,128 @@
       </div>
     </header>
 
-    <div class="container" ui-view="">
+    <div class="container" ng-controller="IndexCtrl" ng-app>
+
+      <section id="hero">
+
+        <div class="row">
+
+          <div class="large-8 large-push-2 medium-10 medium-push-1 columns">
+            <h1>Find a place to eat</h1>
+            <h3>Discover the culture of homecooked food.</h3>
+
+            <form class='search' action="results.html#?q=belmont">
+
+              <div class="row">
+                <div class="large-8 medium-8 columns">
+
+                  <div class="row collapse">
+                    <div class="large-8 medium-8 columns">
+                      <input class="expand" type="text"/>
+                    </div>
+                    <div class="large-4 medium-4 columns">
+                      <button class="expand">Search</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <section>
+        <div class="row">
+          <div class="large-12 columns" id="how-it-works">
+
+            <h1 class="text-center">How it Works</h1>
+
+            <ul class="inline-list facebook">
+              <li>
+                <a class='fbLike' href='https://www.facebook.com/EatnBe' target='_blank'><span class='likes'></span>Like</a>
+              </li>
+
+              <li>
+                <a class='fbShare' href='http://www.facebook.com/share.php?u=http://eatnbe.co/&amp;title=EatnBe' target='_blank'><span class='shares'></span>Share</a>
+              </li>
+            </ul>
+
+            <div id="toggle-button" ng-click="toggleHostView()">
+              <div id="thumb"></div>
+              <span class="for-guests">For Guests</span>
+              <span class="for-hosts">For Hosts</span>
+            </div>
+
+
+            <div class="row features">
+
+              <div id="guest-features">
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/search-icon.png" alt="Search">
+                    <h3>Search</h3>
+                    <p>Hungry? Find your choice of home-cooked meals nearby</p>
+                  </div>
+                </div>
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/reserve-icon.png" alt="Reserve">
+                    <h3>Reserve</h3>
+                    <p>Book a seat at the table and invite your friends</p>
+                  </div>
+                </div>
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/eat-icon.png" alt="Eat">
+                    <h3>Eat</h3>
+                    <p>Eat great food and have a memorable dining experience</p>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div id="host-features">
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/host-icon.png" alt="Host">
+                    <h3>Host</h3>
+                    <p>Share your joy of cooking. Host a memorable dinner for interesting people</p>
+                  </div>
+                </div>
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/cook-icon.png" alt="Cook">
+                    <h3>Cook</h3>
+                    <p>Cook up a storm and get ready to share the table with your guests</p>
+                  </div>
+                </div>
+
+                <div class="large-4 medium-4 columns">
+                  <div class="feature">
+                    <img src="img/serve-icon.png" alt="Serve">
+                    <h3>Serve</h3>
+                    <p>Provide an unforgettable dining experience</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     </div>
 
@@ -94,41 +205,17 @@
     <![endif]-->
 
 
-    <script src="scripts/jquery.js"></script>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
+  <script src="scripts/foundation.min.js"></script>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="scripts/vendor/angular.min.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
-    <!-- endbower -->
-    <!-- endbuild -->
+  <script src="scripts/vendor/jquery.ui.map.js"></script>
+  <script src="scripts/vendor/jquery.ui.map.extensions.js"></script>
+  <script src="scripts/vendor/gmaps.js"></script>
 
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-    <script src="scripts/foundation.min.js"></script>
-
-    <script src="scripts/vendor/jquery.ui.map.js"></script>
-    <script src="scripts/vendor/jquery.ui.map.extensions.js"></script>
-    <script src="scripts/vendor/gmaps.js"></script>
-
-
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/services/eventService.js"></script>
-    <script src="scripts/controllers/results.js"></script>
-    <script src="scripts/controllers/dashboard.js"></script>
-    <script src="scripts/directives/activeTab.js"></script>
-    <!-- endbuild -->
-
-
-
+  <script src="scripts/controllers/index.js"></script>
 
 </body>
 </html>
