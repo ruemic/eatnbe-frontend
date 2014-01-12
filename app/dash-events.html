@@ -35,14 +35,14 @@
 
     <div class="row">
 
-      <div class="large-2 medium-2 columns">
+      <div class="large-2 medium-3 columns">
         <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
-          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard hide-for-medium"></i> Overview</a></li>
-          <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user hide-for-medium"></i> Profile</a></li>
-          <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-home hide-for-medium"></i> My Events</a></li>
-          <li><a class="button secondary expand" href="dash-reservations.html"><i class="fa fa-ticket hide-for-medium"></i> Reservations</a></li>
-          <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope hide-for-medium"></i> Inbox</a></li>
-          <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card hide-for-medium"></i> Billing</a></li>
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user"></i> Profile</a></li>
+          <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-home"></i> My Events</a></li>
+          <li><a class="button secondary expand" href="dash-reservations.html"><i class="fa fa-ticket"></i> Reservations</a></li>
+          <li><a class="button secondary expand" href="dash-inbox.html"><i class="fa fa-envelope"></i> Messages</a></li>
+          <li><a class="button secondary expand" href="dash-billing.html"><i class="fa fa-credit-card"></i> Billing</a></li>
         </ul>
       </div>
 
@@ -51,11 +51,11 @@
 
         <div class="row">
 
-          <div class="large-6 medium-6 columns events">
-            <h3><i class="fa fa-cutlery"></i> Your Events:</h3>
+          <div class="large-10 medium-12 columns events">
+            <h3><i class="fa fa-home"></i> My Events:</h3>
             <ul class="no-bullet">
               <li class="event">
-                <h4><a href="#">Turkey Dinner</a> <small>6pm on 2/2/2014</small> <a href="/events/edit/{{event_id}}"><small><i class="fa fa-edit"></i></small></a></h4>
+                <h4><a href="#">Turkey Dinner</a> <small>6pm on 2/2/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h4>
 
                 <table class="expand guest-approval">
                   <legend>Guest List</legend>
@@ -71,7 +71,7 @@
                       <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
                     </tr>
                     <tr class="confirmed">
-                      <td><a href="#">Batman</a></td>
+                      <td><a href="#">Batman (+1)</a></td>
                       <td><a class="success label" href="#">confirmed</a></td>
                       <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
                     </tr>
@@ -80,9 +80,9 @@
                       <td><a class="success label" href="#">confirmed</a></td>
                       <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
                     </tr>
-                    <tr class="rejected">
-                      <td><a href="#">Barney</a></td>
-                      <td><a class="alert label" href="#">rejected</a></td>
+                    <tr class="denied">
+                      <td><a href="#">Barney (+3)</a></td>
+                      <td><a class="secondary label" href="#">denied</a></td>
                       <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
                     </tr>
                   </tbody>
@@ -91,7 +91,7 @@
 
               <li class="event">
                 <label>Pending - Awaiting Review</label>
-                <h4><a href="#">Roast Lamb</a> <small>7pm on 3/9/2014</small> <a href="/events/edit/{{event_id}}"><small><i class="fa fa-edit"></i></small></a></h4>
+                <h4><a href="#">Roast Lamb</a> <small>7pm on 3/9/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h4>
               </li>
             </ul>
 
@@ -101,64 +101,13 @@
               <ul class="no-bullet">
                 <li class="event">
                   <label class="label secondary">Completed</label>
-                  <h4><a href="#">Gourmet Peanut Butter and Jelly Sandwiches</a> <small>12:30pm on 1/2/2014</small> <a href="/events/edit/{{event_id}}"><small><i class="fa fa-edit"></i></small></a></h4>
+                  <h4><a href="#">Gourmet Peanut Butter and Jelly Sandwiches</a> <small>12:30pm on 1/2/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h4>
                 </li>
               </ul>
             </div>
 
           </div>
 
-
-          <div class="large-6 medium-6 columns reservations">
-            <h3><i class="fa fa-ticket"></i> Reservations:</h3>
-            <ul class="no-bullet">
-
-              <li class="reservation">
-                <div class="row">
-
-                  <div class="large-9 medium-9 small-9 columns">
-                    <h5><a href="event-public.html">Fried Chilly Squid (1 ticket)</a> <small><br><time>8pm on 2/17/2014</time></small></h5>
-                    <a><label class="label success" href="#">confirmed</label> <small>View Receipt</small></a>
-                  </div>
-                  <h3 class="price text-right">$22</h3>
-                  <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
-
-                </div>
-              </li>
-
-              <li class="reservation">
-                <div class="row">
-
-                  <div class="large-9 medium-9 small-9 columns">
-                    <h5><a href="event-public.html">Entrepreneur Pancake Breakfast (2 tickets)</a><br><small><time>8am on 10/11/2014</time></small></h5>
-                    <a class="pending label" href="#">pending approval</a>
-                  </div>
-                  <h3 class="price">$22</h3>
-                  <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
-                </div>
-              </li>
-
-            </ul>
-            <a class="button small secondary" ng-click="showMore()">PAST RESERVATIONS <i class="fa fa-chevron-down"></i></a>
-            <div class="more">
-
-              <ul class="no-bullet">
-                <li class="past reservation">
-                  <div class="row">
-
-                    <div class="large-9 medium-9 small-9 columns">
-                      <h5><a href="event-public.html">Fried Chilly Squid (1 ticket)</a> <small><br><time>8pm on 2/17/2014</time></small></h5>
-                      <a><label class="label success" href="#">confirmed</label> <small>View Receipt</small></a>
-                    </div>
-                    <h3 class="price text-right">$22</h3>
-                    <a class="contact-host" ng-click="messageModal()">contact host <i class="fa fa-user"></i></a>
-
-                  </div>
-                </li>
-              </ul>
-
-            </div>
-          </div>
         </div>
 
         <div id="send-a-message" class="reveal-modal small" data-reveal>

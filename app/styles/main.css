@@ -227,6 +227,20 @@ h1,h2,h3 {
 
 
 
+/* EVENT RECIEPT
+ * -------------------------- */
+
+.reciept {
+  margin-top: 1.5em;
+}
+.reciept ul h3 {
+  font-size: 1.1em
+}
+.reciept ul li {
+  margin-bottom: 1.4em;
+}
+
+
 /* CREATE EVENT
  * -------------------------- */
 
@@ -239,6 +253,9 @@ h1,h2,h3 {
   position: relative;
   top: -.5em;
   left: .3em;
+}
+.create-event #description-textarea {
+  height: 8.2em;
 }
 
 .create-event dl { margin-bottom: 3em }
@@ -254,9 +271,20 @@ h1,h2,h3 {
 .create-event .earnings {
   margin-bottom: 1.2em !important;
 }
-.create-event .earnings p {
-  margin-bottom: 0
+.create-event .earnings i {
+  margin-left: .2em;
 }
+.create-event .earnings p {
+  margin-bottom: 0;
+  line-height: 2em;
+}
+.create-event .earnings strong {
+  font-size: 2em;
+  font-family: 'Signika Negative', sans-serif;
+  position: relative;
+  top: 4px;
+}
+
 .create-event .fa.large {
   font-size: 1.8em;
   margin-right: .2em;
@@ -328,7 +356,6 @@ h1,h2,h3 {
   text-align: center;
 }
 
-
 .account-dashboard {
   padding-top: 1em;
 }
@@ -342,6 +369,11 @@ h1,h2,h3 {
   color: #8B8FA7;
 }
 
+
+.upcoming-events p {
+  margin-bottom: 0;
+
+}
 
 .suggested-actions .completed {
   text-decoration: line-through;
@@ -364,9 +396,14 @@ h1,h2,h3 {
   border: 1px solid #DDD;
 }
 
+.event .edit {
+  margin: 0.9em .4em 0 .3em;
+}
+
 .guest-approval {
   width: 100%;
 }
+
 .guest-approval .label {
   width: 5.6em;
   padding: 5px 0px
@@ -374,7 +411,10 @@ h1,h2,h3 {
 .guest-approval .picker .fa {
   font-size: 1.23em
 }
+.guest-approval .pending .picker{
+  color:#457DB1;
 
+}
 .guest-approval .picker .fa:hover {
   cursor: pointer;
   color: black;
@@ -385,8 +425,8 @@ h1,h2,h3 {
 }
 .guest-approval .picker  span {
   margin: 0 .3em;
-
 }
+
 
 .status-row {
   width: 6.2em;
@@ -395,6 +435,15 @@ h1,h2,h3 {
   width: 4.5em;
 }
 
+
+}
+
+/* DASHBOARD -- RESERVATIONS
+ * -------------------------- */
+
+.reservation {
+  position: relative;
+}
 .reservation .contact-host {
   font-size: .8em;
   position: absolute;
@@ -427,8 +476,19 @@ h1,h2,h3 {
 
 /* DASHBOARD -- MESSAGES
  * -------------------------- */
-.account-dashboard .messages .unread {
-  font-weight: 600;
+
+.account-dashboard .messages .user img {
+  margin-bottom: .3em;
+}
+.messages th:first-child {
+  width: 8em;
+}
+.messages time {
+  font-size: .8em;
+}
+.account-dashboard .messages .unread,
+.account-dashboard .messages .unread p {
+  font-weight: 800 !important;
 }
 
 

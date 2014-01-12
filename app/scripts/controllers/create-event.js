@@ -18,8 +18,8 @@ function CreateEventCtrl($scope) {
 
   // Set some defaults
   $scope.event = {
-    price: 20,
-    guest_limit: 10
+    price: 50,
+    guest_limit: 12
   }
 
   var mapOptions = {

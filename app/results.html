@@ -65,13 +65,15 @@
                     <span class="price">{{resource.event.eventDetails.eventPrice}}</span>
                   </a>
                   <p class="host">
-                    <a href="#"><small>{{resource.event.hostDetails.hostName}}</small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></small></a>
+                    <a href=""><small>{{resource.event.hostDetails.hostName}}</small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></small></a>
                   </p>
                 </div>
 
                 <div class="main-text">
-                  <h4 class="title">{{resource.event.eventDetails.name}}<small><br/>
-                    {{resource.event.eventDetails.eventDate}}</small></h4>
+                  <h4 class="title">
+                    <a href="event-public.html">{{resource.event.eventDetails.name}}</a><br/>
+                    <small>{{resource.event.eventDetails.eventDate}}</small>
+                  </h4>
                   <p class="description">{{resource.event.eventDetails.eventDescription | limitTo: 120}}</p>
                 </div>
               </div>

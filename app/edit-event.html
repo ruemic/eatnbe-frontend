@@ -24,17 +24,18 @@
 
       <div class="large-6 medium-6 columns">
         <ul class="inline-list right main-nav">
-          <li><a href="dash.html">Hi, Ben!</a></li>          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="dash.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
           <li><a href="logout.html">Logout</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-  <section class="create-event" ng-controller="CreateEventCtrl" ng-app>
+  <section class="create-event" ng-controller="EditEventCtrl" ng-app>
     <div class="row">
       <div class="large-12 columns">
-        <h1>Create an Event</h1>
+        <h1>Edit your Event</h1>
       </div>
     </div>
 
@@ -55,7 +56,7 @@
 
             <div class="large-6 columns">
               <label>Give your event a name</label>
-              <input type="text" placeholder='e.g. "Masti pasta"' data-ng-model="event.title" >
+              <input type="text" placeholder='e.g. "Masti pasta"' data-ng-model="event.title">
               <small class="error" data-error-message="">Your event must have a name</small>
 
               <label>Describe your meal <span id="textarea-feedback">(<span id="text-remaining">400</span> characters left)</span></label>
@@ -79,14 +80,12 @@
               <label>Date</label>
               <input data-ng-model="event.date" type="date"/>
               <small class="error" data-error-message="">Your event must have a date</small>
-
             </div>
 
             <div class="large-5 medium-5 small-6 columns">
               <label>Start Time</label>
               <input type="time" data-ng-model="event.time"/>
-              <label>End Time</label>
-              <input type="time" data-ng-model="event.time"/>
+              <small class="error" data-error-message="">Your event must have a time</small>
             </div>
 
           </div>
@@ -139,7 +138,7 @@
                       <span class="price" ng-bind-template="${{event.price}}"></span>
                     </a>
                     <p class="host">
-                      <a href="#"><small>Bob</small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></small></a>
+                      <a href="#"><small>Benjamin Franklin</small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></small></a>
                     </p>
                   </div>
 
@@ -154,7 +153,7 @@
 
             </div>
             <div class="large-12 columns">
-              <button class="large expand">Create Event</button>
+              <button class="large expand">Save Edits</button>
             </div>
           </div>
 
@@ -185,7 +184,7 @@
               <label class='panel clearfix'>
                 <p class="row">
                   <div class="large-2 medium-2 small-2 columns">
-                    <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA">
+                    <input type="radio" name="addresses[]" value="123 Testing Lane, Palo Alto, CA" checked>
                   </div>
                   <div class="large-10 medium-10 small-10 columns">
                     <address>990 Wave Street, Santa Cruz, CA 94306, USA</address>
@@ -214,11 +213,10 @@
 
           </ul>
 
-
           <div class="alert-box">
             <p>For EatnBe dev team</p>
-            <input type="text" id="gps-coordinates" placeholder="gps coords" >
-            <input type="text" id="event-neighborhood" placeholder="event-neighborhood" >
+            <input type="text" id="gps-coordinates" placeholder="gps coords">
+            <input type="text" id="event-neighborhood" placeholder="event-neighborhood">
           </div>
 
         </div>
@@ -230,8 +228,6 @@
           <p>Select the amenities available to your guests</p>
 
           <ul class="large-block-grid-6 medium-block-grid-6 small-block-grid-3">
-
-
             <li>
               <input type="checkbox" name="amenity[]" class="Public_Transportation" value="67" style="display: none;" id="public-transit">
               <label for="public-transit">
@@ -262,7 +258,6 @@
               </label>
               <label class="text-center amenity-title">Paid Parking Nearby</label>
             </li>
-
 
             <li>
               <input type="checkbox" name="amenity[]" class="Elevator_Accessible" value="68" style="display: none;" id="elevator">
@@ -335,7 +330,7 @@
         </div>
 
         <div class="large-12 columns">
-          <button class="large expand">Create Event</button>
+          <button class="large expand">Save Edits</button>
         </div>
 
       </div>
@@ -386,7 +381,94 @@
 
   <!-- PAGE SPECIFIC JS -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
-  <script src="scripts/controllers/create-event.js"></script>
+  <script src="scripts/controllers/edit-event.js"></script>
+
+  <script>
+
+  <!-- Fill in existing event data -->
+
+
+  function EditEventCtrl($scope) {
+
+    $('#description-textarea').keyup(function() {
+      var text_length = $('#description-textarea').val().length;
+      var text_remaining = 400 - text_length;
+      $('#text-remaining').html(text_remaining);
+
+      if (text_remaining <= 0) {
+        $('#textarea-feedback').addClass("text-limit");
+      } else {
+        $('#textarea-feedback').removeClass("text-limit");
+      }
+    });
+
+
+    $scope.event = {
+      title: "Fried Chilly Squid",
+      description: "I will serve with Brinjal gravy and Raitha",
+      date: "2014-01-02",
+      time: "19:00",
+      price: 35,
+      guest_limit: 6,
+      address: "123 Testing Lane, Palo Alto, CA"
+    }
+  var mapOptions = {
+    center: new google.maps.LatLng(37.7833, -122.4167),
+    zoom: 13
+  };
+  var map = new google.maps.Map(document.getElementById('map_canvas'),
+    mapOptions);
+
+  var input = /** @type {HTMLInputElement} */(
+      document.getElementById('address-input'));
+
+
+  var types = document.getElementById('type-selector');
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+
+  // set auto-complete bias for San Francisco
+  var defaultBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(37.7833, -122.4167),
+    new google.maps.LatLng(37.7833, -122.4167));
+
+  var options = {
+    bounds: defaultBounds
+  }
+  var autocomplete = new google.maps.places.Autocomplete(input, options);
+  autocomplete.bindTo('bounds', map);
+
+  var marker = new google.maps.Marker({
+    map: map
+  });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      return;
+    }
+
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    $("#event-address").html(place.formatted_address);
+    $("#gps-coordinates").val(place.geometry.location);
+    $("#event-neighborhood").val(place.address_components[2].long_name);
+
+    $("#new-address-radio").attr('checked', 'checked');
+
+    map.setZoom(13);
+    map.panTo(place.geometry.location);
+
+  });
+
+  }
+  </script>
+
+
 
   <!-- GLOBAL JS -->
 
