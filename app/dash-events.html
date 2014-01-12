@@ -24,20 +24,21 @@
 
       <div class="large-6 medium-6 columns">
         <ul class="inline-list right main-nav">
-          <li><a href="dash.html">Hi, Ben!</a></li>          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="dash.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
           <li><a href="logout.html">Logout</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-  <section class="account-dashboard" ng-controller="DashboardCtrl" ng-app>
+  <section class="account-dashboard" >
 
     <div class="row">
 
       <div class="large-2 medium-3 columns">
         <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
-          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dot-circle-o"></i> Overview</a></li>
           <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user"></i> Profile</a></li>
           <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-home"></i> My Events</a></li>
           <li><a class="button secondary expand" href="dash-reservations.html"><i class="fa fa-ticket"></i> Reservations</a></li>
@@ -49,53 +50,84 @@
 
       <div class="large-10 medium-9 columns">
 
-        <div class="row">
+        <h3><i class="fa fa-home"></i> My Events:</h3>
 
-          <div class="large-10 medium-12 columns events">
-            <h3><i class="fa fa-home"></i> My Events:</h3>
-            <ul class="no-bullet">
-              <li class="event">
-                <h4><a href="#">Turkey Dinner</a> <small>6pm on 2/2/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h4>
 
-                <table class="expand guest-approval">
-                  <legend>Guest List</legend>
-                  <thead>
-                    <th>Name</th>
-                    <th class="status-row text-center">Status</th>
-                    <th class="action-row text-center">Action</th>
-                  </thead>
-                  <tbody>
-                    <tr class="pending">
-                      <td><a href="#">Angela Jolie</a></td>
-                      <td><a class="label" href="#">pending</a></td>
-                      <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+          <ul class="no-bullet">
+            <li class="event">
+              <h3><a href="#">Turkey Dinner</a> <small>6pm on 2/2/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h3>
+
+              <div class="row">
+                <div class="large-8 medium-8 columns">
+
+                  <table class="expand guest-approval">
+                    <h4>Guests</h4>
+                    <thead>
+                      <th>Name</th>
+                      <th class="status-row text-center">Status</th>
+                      <th class="action-row text-center">Action</th>
+                    </thead>
+                    <tbody>
+                      <tr class="pending">
+                        <td><a href="#">Angela Jolie</a></td>
+                        <td><a class="label" href="#">pending</a></td>
+                        <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                      </tr>
+                      <tr class="confirmed">
+                        <td><a href="#">Batman (+1)</a></td>
+                        <td><a class="success label" href="#">confirmed</a></td>
+                        <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                      </tr>
+                      <tr class="confirmed">
+                        <td><a href="#">Robin</a></td>
+                        <td><a class="success label" href="#">confirmed</a></td>
+                        <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                      </tr>
+                      <tr class="denied">
+                        <td><a href="#">Barney (+3)</a></td>
+                        <td><a class="secondary label" href="#">denied</a></td>
+                        <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+                <div class="large-4 medium-4 columns">
+
+                  <h4>Earnings</h4>
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td><h6>Ticket price</h6></td>
+                      <td><h6 class="text-right">$35</h6></td>
                     </tr>
-                    <tr class="confirmed">
-                      <td><a href="#">Batman (+1)</a></td>
-                      <td><a class="success label" href="#">confirmed</a></td>
-                      <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                    <tr>
+                      <td><h6>Tickets sold</h6></td>
+                      <td><h6 class="text-right">4</h6></td>
                     </tr>
-                    <tr class="confirmed">
-                      <td><a href="#">Robin</a></td>
-                      <td><a class="success label" href="#">confirmed</a></td>
-                      <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                    <tr>
+                      <td><h6>Tickets left</h6></td>
+                      <td><h6 class="text-right">2</h6></td>
                     </tr>
-                    <tr class="denied">
-                      <td><a href="#">Barney (+3)</a></td>
-                      <td><a class="secondary label" href="#">denied</a></td>
-                      <td class="picker"><i class="fa fa-thumbs-up"></i><span>|</span><i class="fa fa-thumbs-down"></i></i></td>
+                    <tr>
+                      <td><h6><strong>Total</strong></h6></td>
+                      <td><h6 class="text-right"><strong>$140</strong></h6></td>
                     </tr>
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               </li>
 
               <li class="event">
-                <label>Pending - Awaiting Review</label>
-                <h4><a href="#">Roast Lamb</a> <small>7pm on 3/9/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h4>
+                <label>PENDING - Awaiting review from EatnBe team</label>
+                <h3><a href="#">Roast Lamb</a> <small>7pm on 3/9/2014</small> <small class="edit right"><a href="edit-event.html"<i class="fa fa-edit"></i> edit</a></small></h3>
               </li>
             </ul>
 
-            <a class="button small secondary"  ng-click="showMore()">PAST EVENTS <i class="fa fa-chevron-down"></i></a>
+            <a class="button small secondary show-more">PAST EVENTS <i class="fa fa-chevron-down"></i></a>
 
             <div class="more">
               <ul class="no-bullet">
@@ -106,9 +138,6 @@
               </ul>
             </div>
 
-          </div>
-
-        </div>
 
         <div id="send-a-message" class="reveal-modal small" data-reveal>
           <h2>Send a message to Jillian</h2>

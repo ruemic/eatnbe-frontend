@@ -32,13 +32,13 @@
     </div>
   </header>
 
-  <section class="account-dashboard" ng-controller="DashboardCtrl" ng-app>
+  <section class="account-dashboard" >
 
     <div class="row">
 
       <div class="large-2 medium-3 columns">
         <ul class="small-block-grid-2 medium-block-grid-1 dashboard-menu">
-          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dashboard"></i> Overview</a></li>
+          <li><a class="button secondary expand" href="dash.html"><i class="fa fa-dot-circle-o"></i> Overview</a></li>
           <li><a class="button secondary expand" href="dash-profile.html"><i class="fa fa-user"></i> Profile</a></li>
           <li><a class="button secondary expand" href="dash-events.html"><i class="fa fa-home"></i> My Events</a></li>
           <li><a class="button secondary expand" href="dash-reservations.html"><i class="fa fa-ticket"></i> Reservations</a></li>
@@ -62,49 +62,52 @@
 
         <div class="row">
           <div class="large-12 columns messages">
-          <table>
-            <thead>
-              <tr>
-                <th>Sender</th>
-                <th>Message</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="unread">
-                <td>
-                  <a href="public-profile.html" class="user">
-                    <img src="http://placehold.it/50x50" class="expand" alt=""><br>
-                    Nikola Tesla
-                  </a><br>
-                  <time>12/31/13</time>
-                </td>
-                <td><a href=""><p>Hey! Saw your event about the turkey! Any chance of there being a gluten free stuffing?</p></a></td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="public-profile.html" class="user">
-                    <img src="http://placehold.it/50x50" class="expand" alt=""><br>
-                    Batman
-                  </a><br>
-                  <time>12/31/13</time>
-                </td>
-                <td><a href=""><p>I'll be standing where l belong. Between you and the peopIe of Gotham.</p></a></td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="public-profile.html" class="user">
-                    <img src="http://placehold.it/50x50" class="expand" alt=""><br>
-                    Alexander Mississippian
-                  </a><br>
-                  <time>12/31/13</time>
-                </td>
-                <td><a href=""><p>When the cheese comes out everybody's happy manchego. Caerphilly everyone loves who moved</p></a></td>
-              </tr>
-              <tr>
-            </tbody>
-          </table>
 
-
+            <table>
+              <thead>
+                <tr>
+                  <th>From:</th>
+                  <th>Message</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="public-profile.html" class="user">
+                      <img src="http://placehold.it/50x50" class="expand" alt=""><br>
+                      Nikola Tesla
+                    </a><br>
+                    <time>12/31/13</time>
+                  </td>
+                  <td><p>Hey! Saw your event about the turkey! Any chance of there being a gluten free stuffing?</p></td>
+                  <td><a data-reveal-id="message-id"><i class="fa fa-reply"></i> Reply</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="public-profile.html" class="user">
+                      <img src="http://placehold.it/50x50" class="expand" alt=""><br>
+                      Batman
+                    </a><br>
+                    <time>12/31/13</time>
+                  </td>
+                  <td><p>I'll be standing where l belong. Between you and the peopIe of Gotham.</p></td>
+                  <td><a data-reveal-id="message-id"><i class="fa fa-reply"></i> Reply</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="public-profile.html" class="user">
+                      <img src="http://placehold.it/50x50" class="expand" alt=""><br>
+                      Alexander Mississippian
+                    </a><br>
+                    <time>12/31/13</time>
+                  </td>
+                  <td><p>When the cheese comes out everybody's happy manchego. Caerphilly everyone loves who moved</p></td>
+                  <td><a data-reveal-id="message-id"><i class="fa fa-reply"></i> Reply</a></td>
+                </tr>
+                <tr>
+              </tbody>
+            </table>
 
           </div>
         </div>
@@ -115,6 +118,15 @@
 
   </section>
 
+
+  <div id="message-id" class="reveal-modal small" data-reveal>
+    <h2>Send a reply to Nikola Tesla</h2>
+    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message for Jillian here"></textarea>
+    <a href="dash-inbox.html" class="button expand">Send!</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  </div>
   <footer class="site-footer">
     <div class="row">
       <div class="large-4 medium-4 columns">

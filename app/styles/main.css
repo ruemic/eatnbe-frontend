@@ -16,6 +16,9 @@ h1,h2,h3 {
   font-family: 'Signika Negative', sans-serif;
 }
 
+textarea {
+  min-height: 5em;
+}
 .more { display: none }
 
 /* HEADER
@@ -372,7 +375,6 @@ h1,h2,h3 {
 
 .upcoming-events p {
   margin-bottom: 0;
-
 }
 
 .suggested-actions .completed {
@@ -477,6 +479,10 @@ h1,h2,h3 {
 /* DASHBOARD -- MESSAGES
  * -------------------------- */
 
+
+.account-dashboard .sub-nav a {
+  font-size: 1.24em;
+}
 .account-dashboard .messages .user img {
   margin-bottom: .3em;
 }
@@ -486,7 +492,6 @@ h1,h2,h3 {
 .messages time {
   font-size: .8em;
 }
-.account-dashboard .messages .unread,
 .account-dashboard .messages .unread p {
   font-weight: 800 !important;
 }
