@@ -496,6 +496,10 @@ textarea {
   font-weight: 800 !important;
 }
 
+.messages td p:last-of-type {
+  margin-bottom: 0.4em;
+}
+
 
 
 /* CHECKOUT CONFIRMATION
@@ -760,4 +764,106 @@ textarea {
   border-bottom: 1px solid rgba(0,0,0,0.2);
   -webkit-transform: rotate(45deg);
   left: 8px;
+}
+
+
+
+
+/* REVIEW STARS WIDGET
+ * -------------------------- */
+
+.visuallyhidden{
+  position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px);
+}
+
+.host-review-stars label:after{
+    content: "★";
+    color: inherit;
+    -webkit-transform: scale(4);
+    position: absolute;
+    z-index: 4;
+    left: 0px;
+    transition: all .4s;
+    opacity: 0;
+    color: inherit;
+    visibility: hidden;
+
+}
+
+.host-review-stars input:checked + label:after{
+    visibility: visible;
+    -webkit-transform: scale(1);
+    opacity: 1;
+}
+
+.host-review-stars  {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.host-review-stars label{
+    font-family: "icomoon";
+    font-size: 1.8em;
+    position: relative;
+    cursor: pointer;
+    color: #DFE3E4;
+    margin: 0 0 .2em 0 !important;
+}
+.host-review-stars input:checked ~ label:before{
+    opacity: 1;
+}
+.host-review-stars:hover input ~ label:before{
+    opacity: 0;
+}
+
+.host-review-stars input + label:before{
+    content: "\2605";
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out, color .3s ease-in-out;
+}
+.host-review-stars input + label:hover:before,
+.host-review-stars input + label:hover ~ label:before
+{
+    opacity: 1;
+}
+.host-review-stars input + label:nth-of-type(1):after,
+.host-review-stars input + label:nth-of-type(1):before,
+.host-review-stars input +  label:nth-of-type(1):hover:before,
+.host-review-stars input + label:nth-of-type(1):hover ~ label:before,
+.host-review-stars input:nth-of-type(1):checked ~ label:before{
+    color: #2ecc71;
+}
+.host-review-stars input + label:nth-of-type(2):after,
+.host-review-stars input + label:nth-of-type(2):before,
+.host-review-stars input + label:nth-of-type(2):hover:before,
+.host-review-stars input + label:nth-of-type(2):hover ~ label:before,
+.host-review-stars input:nth-of-type(2):checked ~ label:before{
+    color: #f1c40f;
+}
+.host-review-stars input + label:nth-of-type(3):after,
+.host-review-stars input + label:nth-of-type(3):before,
+.host-review-stars input + label:nth-of-type(3):hover:before,
+.host-review-stars input + label:nth-of-type(3):hover ~ label:before,
+.host-review-stars input:nth-of-type(3):checked ~ label:before{
+    color: #F39C12;
+}
+.host-review-stars input + label:nth-of-type(4):after,
+.host-review-stars input + label:nth-of-type(4):before,
+.host-review-stars input + label:nth-of-type(4):hover:before,
+.host-review-stars input + label:nth-of-type(4):hover ~ label:before,
+.host-review-stars input:nth-of-type(4):checked ~ label:before{
+    color: #e74c3c;
+}
+
+.host-review-stars input + label:nth-of-type(5):after,
+.host-review-stars input + label:nth-of-type(5):before,
+.host-review-stars label:nth-of-type(5):hover:before,
+.host-review-stars input:nth-of-type(5):checked ~ label:before{
+    color: #d35400;
+}
+
+.host-review-stars label:nth-of-type(5):hover:before{
+    color: #d35400 !important;
 }

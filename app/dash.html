@@ -60,9 +60,17 @@
             <table class="activity-feed">
 
               <tr>
+                <td class="icon"><p><i class="fa fa-star"></i></p></td>
+                <td>
+                  <p>You attended <i>Gourmet Peanut Butter and Jelly Sandwiches</i>. <a href="" data-reveal-id="reviewModal">Review the host</a></p>
+                </td>
+                <td><time>3/3/14<br/>3:14pm</time></td>
+              </tr>
+
+              <tr>
                 <td class="icon"><p><i class="fa fa-envelope"></i></p></td>
                 <td>
-                  <p>You have a <a href="">new message</a> from <a href="">Angelina Jolie</a>.</p>
+                  <p>You have a <a href="dash-inbox.html">new message</a> from <a href="">Angelina Jolie</a>.</p>
                 </td>
                 <td><time>2/2/14<br/>8:14pm</time></td>
               </tr>
@@ -70,7 +78,7 @@
               <tr>
                 <td class="icon"><p><i class="fa fa-user"></i></p></td>
                 <td>
-                  <p><a href="">Angelina Jolie</a> would like to reserve 2 seats for your <a href="#">Turkey Dinner</a> event.</p>
+                  <p><a href="">Angelina Jolie</a> would like to reserve 2 seats for your <a href="">Turkey Dinner</a> event.</p>
                   <br>
                   <span class="right"><a class="tiny secondary button" href="#">confirm</a> or <a class="tiny secondary button" href="">deny</a></span>
                 </td>
@@ -79,7 +87,7 @@
 
               <tr>
                 <td class="icon"><p><i class="fa fa-ticket"></i></p></td>
-                <td><p>Your reservation for <a href="/event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
+                <td><p>Your reservation for <a href="event-public.html">Fried Chilly Squid</a> has been confirmed!</a></td>
                 <td><time>1/10/14<br/>2:14pm</time></td>
               </tr>
 
@@ -126,6 +134,24 @@
     </div>
 
   </section>
+
+
+  <div id="reviewModal" class="reveal-modal medium" data-reveal>
+    <h4>Leave a review for <a href="">Nikola Tesla</a></h4><br>
+
+    <div class="host-review-stars">
+      <input type="radio" id="star5" name="rating" value="5" class="visuallyhidden" /><label for="star5" title="Rocks!">★</label>
+      <input type="radio" id="star4" name="rating" value="4" class="visuallyhidden" /><label for="star4" title="Pretty good">★</label>
+      <input type="radio" id="star3" name="rating" value="3" class="visuallyhidden" /><label for="star3" title="Meh">★</label>
+      <input type="radio" id="star2" name="rating" value="2" class="visuallyhidden" /><label for="star2" title="Kinda bad">★</label>
+      <input type="radio" id="star1" name="rating" value="1" class="visuallyhidden" /><label for="star1" title="Sucks big time">★</label>
+    </div>
+    <textarea name="message" id="message" cols="30" rows="10" placeholder=""></textarea>
+
+
+    <a href="dash.html" class="button expand">Leave Review</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
 
 
 
