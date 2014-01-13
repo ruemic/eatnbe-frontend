@@ -206,7 +206,6 @@ textarea {
 }
 
 
-
 /* EVENT - PUBLIC
  * -------------------------- */
 
@@ -347,6 +346,22 @@ textarea {
 }
 .create-event .amenities input[type="checkbox"]:checked + label img {
   opacity: 1;
+}
+
+/* PROFILE - PUBLIC
+ * -------------------------- */
+
+.profile-image {
+  margin: 1em 0;
+}
+.public.profile .reviews p {
+  font-size: .88em;
+}
+.fa-star.light {
+  color: #B9B9B9;
+}
+.public.profile .stars {
+  font-size: 1.7em;
 }
 
 

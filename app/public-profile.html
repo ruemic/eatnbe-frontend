@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EatnBe | peer-to-peer food network</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="styles/font-awesome.css" />
+  <link rel="stylesheet" href="styles/foundation.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <script src="scripts/modernizr.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="row">
+      <div class="large-3 medium-4 columns">
+        <a href="index.html"><img src="img/logo.png" alt="eatnbe" class="logo"></a>
+      </div>
+
+      <div class="large-6 medium-6 columns">
+        <ul class="inline-list right main-nav">
+          <li><a href="dash.html">Hi, Ben!</a></li>
+          <li><a href="host.html" class="tiny button">Host</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="public profile">
+
+    <div class="row">
+
+
+      <div class="large-6 medium-7 columns">
+        <h2>Benjamin Franklin</h2>
+        <p><strong>Profession</strong>: Inventor</p>
+        <p><strong>Languages</strong>: English</p>
+        <p><strong>About</strong>: Benjamin Franklin was born in Boston on January 17, 1706. He was the tenth son of soap maker, Josiah Franklin. Benjamin's mother was Abiah Folger, the second wife of Josiah. In all, Josiah would father 17 children.
+        <br/><br/>
+        of the Executive Council of Pennsylvania. He served as a delegate to the Constitutional Convention and signed the Constitution. One of his last public acts was writing an anti-slavery treatise in 1789.
+        <br/><br/>
+        Franklin died on April 17, 1790 at the age of 84. 20,000 people attended the funeral of the man who was called, "the harmonious human multitude."</p>
+
+        <h4>Upcoming Events hosted by Benjamin:</h4>
+
+        <article class="row result ng-scope" ng-repeat="event in events | filter:search | filter:priceFilter">
+          <div class="large-12 columns">
+            <div class="pic-wrapper small-5 medium-4 large-5">
+              <a href="event-public.html" class="event-link">
+                <img src="http://27.251.32.9:1008/eatnbe/media/catalog/product/cache/0/image/265x/9df78eab33525d08d6e5fb8d27136e95/s/q/squid_8207.jpg" class="expand" alt="">
+                <span class="price ng-binding">$20</span>
+              </a>
+            </div>
+
+            <div class="main-text">
+              <h4 class="title">
+                <a href="event-public.html" class="ng-binding">Fried Chili Squid</a><br>
+                <small class="ng-binding">01/28/2014 7:00 PM</small>
+              </h4>
+              <p class="description ng-binding"> In eu purus ac felis hendrerit condimentum. Nulla cursus rhoncus quam, vel eleifend mi accumsan ac. Donec quis suscipit</p>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="large-5 medium-5 columns">
+        <div class="row">
+          <div class="large-8 medium-9 large-centered medium-centered columns">
+            <img src="http://placehold.it/500x500" class="profile-image expand" alt="">
+            <a href="" class="button expand">Contact Benjamin</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="large-6 columns">
+
+        <h4>Reviews of Benjamin</h4>
+        <hr>
+        <ul class="no-bullet reviews">
+          <li>
+            <p>Ben's Turkey Dinner was absolutely ravishing! And the dessert, don't get me started on the how moist and delicious those brownies where...</p>
+            <p class="reviewer">
+              <small class="ng-binding"></small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></small>
+
+              <a href="" class="right"><i>~ Angelina Jolie</i></a>
+            </p>
+            <hr>
+          </li>
+          <li>
+            <p>Pretty good.</p>
+            <p class="reviewer">
+              <small class="ng-binding"></small> <small class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star light"></i></small>
+
+              <a href="" class="right"><i>~ Nikola Tesla</i></a>
+            </p>
+            <hr>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="row">
+      <div class="large-4 medium-4 columns">
+        <h4>Company</h4>
+        <ul class="no-bullet">
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Legal</h4>
+        <ul class="no-bullet">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/privacy">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="large-4 medium-4 columns">
+        <h4>Connect with us</h4>
+        <ul class="inline-list social-sharing">
+          <li><a href="https://www.facebook.com/EatnBe"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/eatnbe"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="text-center"><small>© 2013 eatnbe - peer-to-peer food network. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- GLOBAL JS -->
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+  <script src="scripts/vendor/angular.min.js"></script>
+
+  <!-- PAGE SPECIFIC JS -->
+  <script src="scripts/controllers/dashboard.js"></script>
+
+  <!-- MORE GLOBAL JS -->
+
+  <script>
+  $(document).foundation();
+  </script>
+
+</body>
+</html>
