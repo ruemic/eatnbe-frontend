@@ -5,7 +5,7 @@ angular.module('eatnbeApp', ['ngResource'])
   .factory('eventService', function ($resource) {
 
     return $resource('events/:eventId.json', {}, {
-      query: { method: 'GET', params: {eventId: 'events'}, isArray:true }
+      query: { method: 'GET', params: {eventId: 'events-nice'}, isArray:true }
     });
 
   })
@@ -15,8 +15,17 @@ angular.module('eatnbeApp', ['ngResource'])
     // Get the search params
     console.log( $location.search() );
 
+
     // Get the data, TODO use search params to query real data source
     $scope.events = eventService.query();
+
+    $scope.maxPrice = 30;
+
+    $scope.priceFilter = function(event) {
+      if (event.price <= $scope.maxPrice) {
+        return event;
+      }
+    };
 
     // draw a GMap
     var map = new GMaps({

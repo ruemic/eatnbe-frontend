@@ -201,6 +201,11 @@ textarea {
   left: -0.2em;
 }
 
+.filters .range {
+  width: 20em;
+}
+
+
 
 /* EVENT - PUBLIC
  * -------------------------- */
