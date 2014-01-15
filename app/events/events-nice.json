@@ -11,14 +11,7 @@
     "image": "http://27.251.32.9:1008/eatnbe/media/catalog/product/cache/0/image/265x/9df78eab33525d08d6e5fb8d27136e95/p/a/paneer-rotis_83628.jpg",
     "hostId": "95",
     "hostName": "SmartMan SmartMan",
-    "hostImage": "http://27.251.32.9:1008/eatnbe/skin/images/no_user.jpg",
-    "eventAddress": {
-        "address": "1720 Termino Ave",
-        "city": "Long Beach",
-        "state": "California",
-        "country": "United States",
-        "zipcode": null
-    }
+    "hostImage": "http://27.251.32.9:1008/eatnbe/skin/images/no_user.jpg"
 },
 {
     "name": "Gobi Manchurian",

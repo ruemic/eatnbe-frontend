@@ -212,6 +212,14 @@ textarea {
 #directions #map {
   height: 10em !important;
 }
+.event-view h1 {
+  margin: .4em 0 .2em;
+  line-height: 1em;
+}
+.event-view h1 small time {
+  white-space: nowrap;
+  font-size: 0.87em;
+}
 .event-view .number-of-guests {
   width: 4em;
 }
@@ -222,17 +230,40 @@ textarea {
   font-size: 2.4em;
   line-height: 1em;
 }
-.event-view .properties p {
-  margin-bottom: 0
-
+.event-view .subtotal {
+  margin-bottom: 0;
 }
 .event-view .book-now {
   font-size: 1.2em;
   line-height: 1.7em;
-  margin-top: .2em;
+  margin: .2em 0 .5em;
 }
 
+.event-view .host {
+  border: 1px solid #D8D8D8;
+  margin-top: 1em;
+  padding: 0 0 .9em;
+}
 
+.event-view .host .profile-thumb {
+  width: 4em;
+  display: inline-block;
+  margin: 0 1em 0em;
+}
+.event-view .host .profile-thumb + p {
+  display: inline-block;
+}
+
+.nearby-list h3 {
+  margin-bottom: 0;
+}
+.nearby-list h3 + p {
+  margin-bottom: 0;
+}
+
+.checkout-confirmation {
+  margin-top: .88em;
+}
 
 /* EVENT RECIEPT
  * -------------------------- */
@@ -338,7 +369,7 @@ textarea {
 .create-event .amenities img:hover {
   opacity: 1;
 }
-.create-event .amenity-title {
+.amenity-title {
   padding-top: .4em;
 }
 .create-event .amenities input[type="checkbox"]:checked + label {
@@ -458,7 +489,7 @@ textarea {
 }
 
 
-}
+
 
 /* DASHBOARD -- RESERVATIONS
  * -------------------------- */
