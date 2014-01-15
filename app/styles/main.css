@@ -264,7 +264,12 @@ textarea {
 .checkout-confirmation {
   margin-top: .88em;
 }
-
+.save-billing {
+  margin-bottom: 0;
+}
+.save-billing input {
+  margin-right: .4em;
+}
 /* EVENT RECIEPT
  * -------------------------- */
 
