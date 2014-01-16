@@ -131,15 +131,15 @@ textarea {
   color: #5191CD;
 }
 
-
 .map-tip {
-  width: 100%;
+  width: 10em;
+  display: block;
 }
 .map-tip img {
   width: 100%;
-  margin: 0 auto;
-  display: block;
 }
+
+
 #results {
   margin: 1em 0 2em;
 }

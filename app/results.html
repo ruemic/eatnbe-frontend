@@ -53,16 +53,17 @@
 
           <section class="filters panel">
 
-            <h5>Narrow down your results: <br> <input type="text" ng-model="search.$"></h5>
+            <h5>Type to refine your results:</h5>
+            <input type="text" ng-model="search.$" ng-change="change()">
 
             <h5>Maximum Price: ${{maxPrice}}</h5>
-            <input type="range" class="range" name="range" min="0" max="150" step="1" value="50" ng-model="maxPrice" />
-            <!-- <h4>Price range: <input ng-model="filterPrice"></h4> -->
+            <input type="range" class="range" name="range" min="0" max="150" step="1" value="50" ng-model="maxPrice" ng-change="change()" />
+
           </section>
 
 
           <section id="results">
-            <article class="row result" ng-repeat="event in events | filter:search | filter:priceFilter">
+            <article class="row result" ng-repeat="event in ( filteredEvents = ( events | filter:search | filter:priceFilter ))">
               <div class="large-12 columns">
                 <div class="pic-wrapper small-5 medium-4 large-5">
                   <a href="event-public.html" class="event-link">
@@ -85,7 +86,6 @@
 
             </article>
 
-            <div ui-view></div>
             <a class="button" ui-sref="results.more">See More Events</a>
 
           </section>
@@ -111,7 +111,7 @@
               </form>
             </div>
 
-            <h3>Map of nearby events:</h3>
+            <h3>Map:</h3>
             <div id="map_canvas"></div>
             <p class="right"><i class="fa fa-user key"></i><small> = Your Current Location</i></small></p>
 
@@ -164,19 +164,20 @@
 
 
   <script src="scripts/jquery.js"></script>
+  <script src="scripts/foundation.min.js"></script>
+
+
+  <!-- PAGE SPECIFIC JS -->
+
   <script src="scripts/vendor/angular.min.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
 
-  <script src="scripts/foundation.min.js"></script>
-
   <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-  <script src="scripts/vendor/jquery.ui.map.js"></script>
-  <script src="scripts/vendor/jquery.ui.map.extensions.js"></script>
   <script src="scripts/vendor/gmaps.js"></script>
 
   <script src="scripts/controllers/results.js"></script>
 
+  <!-- END PAGE SPECIFIC JS -->
 
 </body>
 </html>
